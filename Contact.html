@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhanya Nursery Plants</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    
+
+    <style>
+
+        /* Body background with green plants and flowers */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+        * {
+          font-family: 'Poppins', sans-serif;
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('plant green.avif');
+            background-size: contain;
+            background-position: center;
+            background-repeat: repeat;
+            color: #186120;
+        }
+        /* Full green background for the entire navbar */
+        .navbar {
+            background-color: #046511 !important;
+            padding: 1rem 1.5rem;
+        }
+
+        /* Navbar brand (Dhanya Nursery) styling */
+        .navbar-brand {
+            color: #f4f7f4 !important;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Align contact icons in the center of the navbar */
+        .navbar .contact-icons {
+            display: flex;
+            gap: 20px;
+            background-color: white; /* White background for contact icons */
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .contact-icons a {
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        /* Specific colors for each icon */
+        .contact-icons a[href^="tel"] i {
+            color: #4CAF50;
+        }
+
+        .contact-icons a[href*="wa.me"] i {
+            color: #25D366;
+        }
+
+        .contact-icons a[href*="instagram.com"] i {
+            color: #C13584;
+        }
+
+        .contact-icons a[href*="youtube.com"] i {
+            color: #FF0000;
+        }
+
+        /* Hover effect */
+        .contact-icons a:hover i {
+            opacity: 0.8;
+        }
+
+        /* Navbar menu items aligned to the right */
+        .navbar-nav {
+      margin-left: auto;
+      flex-direction: row; /* Horizontal alignment */
+    }
+
+        /* Green background and white text for navbar items */
+        .navbar-nav .nav-link {
+      color: #f4f7f4 !important;
+      font-weight: bold;
+      font-family: 'Arial', sans-serif;
+      padding: 0.5rem 1rem; /* Space out items */
+      transition: color 0.3s;
+    }
+
+
+        /* Darker green color for hover effect on navbar links */
+        .navbar-nav .nav-link:hover {
+            color: #e2e87d !important; /* Light green on hover */
+        }
+
+        /* Dropdown menu with green background */
+        .dropdown-menu {
+            background-color: #046511;
+        }
+
+        /* Dropdown item color */
+        .dropdown-item {
+            color: #f4f7f4 !important;
+        }
+
+        /* Dropdown item hover effect */
+        .dropdown-item:hover {
+            background-color: #0f852a !important;
+        }
+
+        /* Remove light background of navbar-toggler */
+        .navbar-toggler {
+            background-color: #a7d3ad !important;
+        }
+
+        /* Ensures horizontal layout on mobile */
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .navbar-nav {
+        flex-direction: row; /* Display nav items horizontally */
+      }
+
+      .dropdown-menu {
+        position: static;
+      }
+    }
+
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: #8B4513;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        h2 {
+            font-family: 'Lora', serif;
+            color: #761414;
+            font-size: 2rem;
+            line-height: 2;
+            padding: 0 2rem;
+            text-align: justify;
+            letter-spacing: 0.5px;
+        }
+
+        .shop-content
+            {
+             display: grid;
+             grid-template-columns: repeat(auto-fit,minmax(220px,auto));
+             gap:1.5rem;
+             justify-content: center;
+             align-content: center;
+            }
+
+            .container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px auto;
+            max-width: 900px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-details {
+            flex: 1;
+            margin-right: 20px;
+            font-size: 14px;
+        }
+
+        .contact-details h3 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .form-container {
+            flex: 2;
+        }
+
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+                .add-cart
+            {
+             position: absolute;
+             bottom: 0;
+             right: 0;
+             background-color: #2ed573;
+             color:white;
+             padding: 10px;
+             font-size: 1.1rem;
+             cursor: pointer;
+             transition: 0.5s;
+            }
+
+        .add-cart:hover
+            {
+             background-color:rgba(255, 0, 0, 0.786);
+            }
+  
+
+            .cart {
+      position: fixed;
+      top: 0;
+      right: -50%;
+      width: 400px;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+      z-index: 100;
+    }
+
+    .cart-active {
+      right: 0;
+      transition: 0.5s;
+    }
+
+        .cart-title
+            {
+             text-align: center;
+             font-size: 1.5rem;
+             font-weight: 500;
+             margin-bottom: 1rem;
+             padding-bottom:20px ;
+             border-bottom: 1px solid rgba(0,0,0,0.1);
+            }
+
+        .cart-box
+            {
+             display: grid;
+             grid-template-columns: 32% 50% 18%;
+             align-items: center;
+             gap: 1rem;
+             margin-top: 1rem;
+             border-bottom: 1px solid rgba(0,0,0,0.1);
+             padding-bottom: 10px;
+            }
+
+        .cart-img
+            {
+             width: 75px;
+             height: 75px;
+             object-fit: cover;
+             border:2px solid  rgba(0,0,0,0.1);
+             padding: 5px;
+            }
+        .detail-box
+            {
+             display: grid;
+             row-gap: 0.5rem;  
+            }
+
+        .price-box
+            {
+             display: flex;
+             justify-content: space-between; 
+            }
+
+        .cart-plant-title
+            {
+             font-size: 1rem;
+             text-transform: uppercase;
+             color:#ff6348;
+             font-weight: 500;
+            }
+
+        .cart-price
+            {
+             font-weight: 500;
+            }
+
+        .cart-quantity
+            {
+             border:1px solid rgba(0,0,0,0.1);
+             outline:none ;
+             width: 2.4rem;
+             text-align: center;
+             font-size: 1rem;
+            }
+
+        .cart-remove
+            {
+             font-size: 24px;
+             color:red;
+             cursor: pointer;
+            }
+
+        .total
+            {
+             display: flex;
+             justify-content: flex-end;
+             margin-top: 1.5rem;
+            }
+
+        .total-title
+            {
+             font-size: 1rem;
+             font-weight: 600;
+            }
+
+        .total-price
+            {
+             margin-left: 0.5rem;
+            }
+
+        .btn-buy
+            {
+             padding: 12px 20px;
+             background-color:#2f3542;
+             color:#fff;
+             border: none;
+             font-size: 1rem;
+             font-weight: 500;
+             cursor: pointer;
+            }
+
+         #cart-close
+            {
+             position: absolute;
+             top: 1rem;
+             right: 0.8rem;
+             font-size: 2rem;
+             cursor: pointer;
+            }
+        
+
+        .cart-count {
+      position: absolute;
+      background-color: #2f3542;
+      top: -5px;
+      right: 0;
+      padding: 3px;
+      height: 20px;
+      width: 20px;
+      line-height: 20px;
+      border-radius: 50%;
+      z-index: 99;
+    }
+
+    #cart-icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding-top: 10px;
+      color: #f4f7f4; /* Ensure icon is visible */
+    }
+
+        img{
+            width: 100%;
+           }
+
+        .container
+            {
+            max-width: 1200px;
+            padding: 4rem;
+            margin: auto;
+            width: 100%;
+            }
+
+        h2.title
+            {
+             background-color: #fcfcfa;
+             font-size: 2rem;
+             font-weight: 100;
+             margin-bottom: 1.1rem;
+             color:hsl(317, 87%, 33%);
+             font-weight: 600;
+            }
+
+        .shop-content
+            {
+             display: grid;
+             grid-template-columns: repeat(auto-fit,minmax(220px,auto));
+             gap:1.5rem;
+             justify-content: center;
+             align-content: center;
+            }
+
+     
+        .add-cart
+            {
+             position: absolute;
+             bottom: 0;
+             right: 0;
+             background-color: #2ed573;
+             color:white;
+             padding: 10px;
+             font-size: 1.1rem;
+             cursor: pointer;
+             transition: 0.5s;
+            }
+
+        .add-cart, .cart-remove 
+            {
+             transition: background-color 0.5s;
+             cursor: pointer;
+            }
+
+
+        .add-cart:hover
+            {
+             background-color:rgba(255, 0, 0, 0.786);
+            }
+  
+
+            .cart {
+      position: fixed;
+      top: 0;
+      right: -50%;
+      width: 400px;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+      z-index: 100;
+    }
+
+    .cart-active {
+      right: 0;
+      transition: 0.5s;
+    }
+
+        .cart-title
+            {
+             text-align: center;
+             font-size: 1.5rem;
+             font-weight: 500;
+             margin-bottom: 1rem;
+             padding-bottom:20px ;
+             border-bottom: 1px solid rgba(0,0,0,0.1);
+            }
+
+        .cart-box
+            {
+             display: grid;
+             grid-template-columns: 32% 50% 18%;
+             align-items: center;
+             gap: 1rem;
+             margin-top: 1rem;
+             border-bottom: 1px solid rgba(0,0,0,0.1);
+             padding-bottom: 10px;
+            }
+
+        .cart-img
+            {
+             width: 75px;
+             height: 75px;
+             object-fit: cover;
+             border:2px solid  rgba(0,0,0,0.1);
+             padding: 5px;
+            }
+        .detail-box
+            {
+             display: grid;
+             row-gap: 0.5rem;  
+            }
+
+        .price-box
+            {
+             display: flex;
+             justify-content: space-between; 
+            }
+
+        .cart-plant-title
+            {
+             font-size: 1rem;
+             text-transform: uppercase;
+             color:#ff6348;
+             font-weight: 500;
+            }
+
+        .cart-price
+            {
+             font-weight: 500;
+            }
+
+        .cart-quantity
+            {
+             border:1px solid rgba(0,0,0,0.1);
+             outline:none ;
+             width: 2.4rem;
+             text-align: center;
+             font-size: 1rem;
+            }
+
+        .cart-remove
+            {
+             font-size: 24px;
+             color:red;
+             cursor: pointer;
+            }
+
+        .total
+            {
+             display: flex;
+             justify-content: flex-end;
+             margin-top: 1.5rem;
+            }
+
+        .total-title
+            {
+             font-size: 1rem;
+             font-weight: 600;
+            }
+
+        .total-price
+            {
+             margin-left: 0.5rem;
+            }
+
+        .btn-buy
+            {
+             padding: 12px 20px;
+             background-color:#2f3542;
+             color:#fff;
+             border: none;
+             font-size: 1rem;
+             font-weight: 500;
+             cursor: pointer;
+            }
+
+         #cart-close
+            {
+             position: absolute;
+             top: 1rem;
+             right: 0.8rem;
+             font-size: 2rem;
+             cursor: pointer;
+            }
+    
+    
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus {
+    border-color: #007bff;
+  }
+  
+  input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  } 
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Dhanya Nursery</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="contact-icons">
+              <a href="tel:+1234567890" title="Call us"><i class="fas fa-phone-alt"></i></a>
+              <a href="https://wa.me/6380042710" title="WhatsApp us"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://www.instagram.com/girlbossdhxxya" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.youtube.com/channel/rukmani8256" title="Watch us on YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+    
+            <!-- Right-aligned navbar items -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="home page.html">Home</a>
+                </li>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                  Products
+                </a>
+                <ul class="dropdown-menu">
+      
+                  <li><a class="dropdown-item" href="indexUpdate.html#flower-plants">Flower Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#tree-plants">Trees</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#pot-plants">Pot Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#aqua-plants">Aqua Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#croton-plants">Croton Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#creeper-plants">Creeper Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#climber-plants">Climber Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#indoor-plants">Indoor Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#vegetable-plants">Vegetable Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#herbal-plants">Herbal Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#combo-plants">Combo Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#fruit-plants">Fruit Plants</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <!-- Cart Icon placed here -->
+          <div class="box">
+            <div class="cart-count">0</div>
+            <ion-icon name="cart" id="cart-icon"></ion-icon>
+          </div>
+        </div>
+    
+        
+
+            
+  
+  <!-- Cart Structure -->
+  <div class="cart">
+    <div class="cart-title">Cart Items</div>
+    <div class="cart-content"></div>
+    <div class="total">
+      <div class="total-title">Total</div>
+      <div class="total-price">Rs.0</div>
+    </div>
+    <button class="btn-buy">Place Order</button>
+    <ion-icon name="close" id="cart-close"></ion-icon>
+  </div>
+
+</nav>
+
+
+          <!-- Contact Section -->
+    <div class="container">
+        <!-- Contact Details -->
+        <div class="contact-details">
+            <h3>Contact Details</h3>
+            <p><strong>Address:</strong><br> NH-47, Perundurai Road,<br> Near Toll Plaza, Vijayamangalam,<br> Erode-638056, Tamil Nadu, India.</p>
+            <p><strong>Email:</strong><br> dhanyanurseryvjm@gmail.com<br> dhanyanurseryin2013@gmail.com</p>
+            <p><strong>Phone:</strong><br> Mr. Jayaprakash: +(91)-94432-63484, +(91)-93642-63633<br> Mrs. Amutha: +(91)-98427-63633</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="form-container">
+            <h3>Contact Us</h3>
+            <form action="#">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Initialize Tooltips -->
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+
+
+    </script>
+    
+
+    <!-- Bootstrap JS bundle (includes Popper.js for dropdowns) -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">    
+</body>
+</html>

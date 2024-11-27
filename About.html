@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhanya Nursery Plants</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    
+
+    <style>
+
+        /* Body background with green plants and flowers */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+        * {
+          font-family: 'Poppins', sans-serif;
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('plant green.avif');
+            background-size: contain;
+            background-position: center;
+            background-repeat: repeat;
+            color: #186120;
+        }
+        /* Full green background for the entire navbar */
+        .navbar {
+            background-color: #046511 !important;
+            padding: 1rem 1.5rem;
+        }
+
+        /* Navbar brand (Dhanya Nursery) styling */
+        .navbar-brand {
+            color: #f4f7f4 !important;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Align contact icons in the center of the navbar */
+        .navbar .contact-icons {
+            display: flex;
+            gap: 20px;
+            background-color: white; /* White background for contact icons */
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .contact-icons a {
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        /* Specific colors for each icon */
+        .contact-icons a[href^="tel"] i {
+            color: #4CAF50;
+        }
+
+        .contact-icons a[href*="wa.me"] i {
+            color: #25D366;
+        }
+
+        .contact-icons a[href*="instagram.com"] i {
+            color: #C13584;
+        }
+
+        .contact-icons a[href*="youtube.com"] i {
+            color: #FF0000;
+        }
+
+        /* Hover effect */
+        .contact-icons a:hover i {
+            opacity: 0.8;
+        }
+
+        /* Navbar menu items aligned to the right */
+        .navbar-nav {
+      margin-left: auto;
+      flex-direction: row; /* Horizontal alignment */
+    }
+
+        /* Green background and white text for navbar items */
+        .navbar-nav .nav-link {
+      color: #f4f7f4 !important;
+      font-weight: bold;
+      font-family: 'Arial', sans-serif;
+      padding: 0.5rem 1rem; /* Space out items */
+      transition: color 0.3s;
+    }
+
+
+        /* Darker green color for hover effect on navbar links */
+        .navbar-nav .nav-link:hover {
+            color: #e2e87d !important; /* Light green on hover */
+        }
+
+        /* Dropdown menu with green background */
+        .dropdown-menu {
+            background-color: #046511;
+        }
+
+        /* Dropdown item color */
+        .dropdown-item {
+            color: #f4f7f4 !important;
+        }
+
+        /* Dropdown item hover effect */
+        .dropdown-item:hover {
+            background-color: #0f852a !important;
+        }
+
+        /* Remove light background of navbar-toggler */
+        .navbar-toggler {
+            background-color: #a7d3ad !important;
+        }
+
+        /* Ensures horizontal layout on mobile */
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .navbar-nav {
+        flex-direction: row; /* Display nav items horizontally */
+      }
+
+      .dropdown-menu {
+        position: static;
+      }
+    }
+
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: #8B4513;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        h2 {
+            font-family: 'Lora', serif;
+            color: #761414;
+            font-size: 2rem;
+            line-height: 2;
+            padding: 0 2rem;
+            text-align: justify;
+            letter-spacing: 0.5px;
+        }
+
+        .shop-content
+            {
+             display: grid;
+             grid-template-columns: repeat(auto-fit,minmax(220px,auto));
+             gap:1.5rem;
+             justify-content: center;
+             align-content: center;
+            }
+
+        .plant-box
+            {
+             position: relative;
+             background-color: #fff;
+             padding: 10px;
+             box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+             border-radius: 3px;
+            }
+
+        .pic{
+            overflow: hidden;
+            }
+
+        .pic:hover img
+            {
+             transform: scale(1.5);
+            }
+
+        .plant-img
+            {
+             transition: 0.4s;
+             aspect-ratio: 1/1;
+             object-fit: cover;
+            }
+
+        .plant-title
+            {
+            font-size: 1rem;
+            font-weight: 600;
+            color:#ff6348;
+            }
+
+        .plant-price
+            {
+             font-weight:500 ;
+            }
+
+        .add-cart
+            {
+             position: absolute;
+             bottom: 0;
+             right: 0;
+             background-color: #2ed573;
+             color:white;
+             padding: 10px;
+             font-size: 1.1rem;
+             cursor: pointer;
+             transition: 0.5s;
+            }
+
+        .add-cart:hover
+            {
+             background-color:rgba(255, 0, 0, 0.786);
+            }
+  
+
+            .cart {
+      position: fixed;
+      top: 0;
+      right: -50%;
+      width: 400px;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+      z-index: 100;
+    }
+
+    .cart-active {
+      right: 0;
+      transition: 0.5s;
+    }
+
+        .cart-title
+            {
+             text-align: center;
+             font-size: 1.5rem;
+             font-weight: 500;
+             margin-bottom: 1rem;
+             padding-bottom:20px ;
+             border-bottom: 1px solid rgba(0,0,0,0.1);
+            }
+
+        .cart-box
+            {
+             display: grid;
+             grid-template-columns: 32% 50% 18%;
+             align-items: center;
+             gap: 1rem;
+             margin-top: 1rem;
+             border-bottom: 1px solid rgba(0,0,0,0.1);
+             padding-bottom: 10px;
+            }
+
+        .cart-img
+            {
+             width: 75px;
+             height: 75px;
+             object-fit: cover;
+             border:2px solid  rgba(0,0,0,0.1);
+             padding: 5px;
+            }
+        .detail-box
+            {
+             display: grid;
+             row-gap: 0.5rem;  
+            }
+
+        .price-box
+            {
+             display: flex;
+             justify-content: space-between; 
+            }
+
+        .cart-plant-title
+            {
+             font-size: 1rem;
+             text-transform: uppercase;
+             color:#ff6348;
+             font-weight: 500;
+            }
+
+        .cart-price
+            {
+             font-weight: 500;
+            }
+
+        .cart-quantity
+            {
+             border:1px solid rgba(0,0,0,0.1);
+             outline:none ;
+             width: 2.4rem;
+             text-align: center;
+             font-size: 1rem;
+            }
+
+        .cart-remove
+            {
+             font-size: 24px;
+             color:red;
+             cursor: pointer;
+            }
+
+        .total
+            {
+             display: flex;
+             justify-content: flex-end;
+             margin-top: 1.5rem;
+            }
+
+        .total-title
+            {
+             font-size: 1rem;
+             font-weight: 600;
+            }
+
+        .total-price
+            {
+             margin-left: 0.5rem;
+            }
+
+        .btn-buy
+            {
+             padding: 12px 20px;
+             background-color:#2f3542;
+             color:#fff;
+             border: none;
+             font-size: 1rem;
+             font-weight: 500;
+             cursor: pointer;
+            }
+
+         #cart-close
+            {
+             position: absolute;
+             top: 1rem;
+             right: 0.8rem;
+             font-size: 2rem;
+             cursor: pointer;
+            }
+        
+
+        .cart-count {
+      position: absolute;
+      background-color: #2f3542;
+      top: -5px;
+      right: 0;
+      padding: 3px;
+      height: 20px;
+      width: 20px;
+      line-height: 20px;
+      border-radius: 50%;
+      z-index: 99;
+    }
+
+    #cart-icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding-top: 10px;
+      color: #f4f7f4; /* Ensure icon is visible */
+    }
+
+        img{
+            width: 100%;
+           }
+
+        .container
+            {
+            max-width: 1200px;
+            padding: 4rem;
+            margin: auto;
+            width: 100%;
+            }
+
+        h2.title
+            {
+             background-color: #fcfcfa;
+             font-size: 2rem;
+             font-weight: 100;
+             margin-bottom: 1.1rem;
+             color:hsl(317, 87%, 33%);
+             font-weight: 600;
+            }
+
+        .shop-content
+            {
+             display: grid;
+             grid-template-columns: repeat(auto-fit,minmax(220px,auto));
+             gap:1.5rem;
+             justify-content: center;
+             align-content: center;
+            }
+
+        .plant-box
+            {
+             position: relative;
+             background-color: #fff;
+             padding: 10px;
+             box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+             border-radius: 3px;
+            }
+
+        .pic{
+            overflow: hidden;
+            }
+
+        .pic:hover img
+            {
+             transform: scale(1.5);
+            }
+
+        .plant-img
+            {
+             transition: 0.4s;
+             aspect-ratio: 1/1;
+             object-fit: cover;
+            }
+
+        .plant-title
+            {
+            font-size: 1rem;
+            font-weight: 600;
+            color:#ff6348;
+            }
+
+        .plant-price
+            {
+             font-weight:500 ;
+            }
+
+        .add-cart
+            {
+             position: absolute;
+             bottom: 0;
+             right: 0;
+             background-color: #2ed573;
+             color:white;
+             padding: 10px;
+             font-size: 1.1rem;
+             cursor: pointer;
+             transition: 0.5s;
+            }
+
+        .add-cart, .cart-remove 
+            {
+             transition: background-color 0.5s;
+             cursor: pointer;
+            }
+
+
+        .add-cart:hover
+            {
+             background-color:rgba(255, 0, 0, 0.786);
+            }
+  
+
+            .cart {
+      position: fixed;
+      top: 0;
+      right: -50%;
+      width: 400px;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+      z-index: 100;
+    }
+
+    .cart-active {
+      right: 0;
+      transition: 0.5s;
+    }
+
+        .cart-title
+            {
+             text-align: center;
+             font-size: 1.5rem;
+             font-weight: 500;
+             margin-bottom: 1rem;
+             padding-bottom:20px ;
+             border-bottom: 1px solid rgba(0,0,0,0.1);
+            }
+
+        .cart-box
+            {
+             display: grid;
+             grid-template-columns: 32% 50% 18%;
+             align-items: center;
+             gap: 1rem;
+             margin-top: 1rem;
+             border-bottom: 1px solid rgba(0,0,0,0.1);
+             padding-bottom: 10px;
+            }
+
+        .cart-img
+            {
+             width: 75px;
+             height: 75px;
+             object-fit: cover;
+             border:2px solid  rgba(0,0,0,0.1);
+             padding: 5px;
+            }
+        .detail-box
+            {
+             display: grid;
+             row-gap: 0.5rem;  
+            }
+
+        .price-box
+            {
+             display: flex;
+             justify-content: space-between; 
+            }
+
+        .cart-plant-title
+            {
+             font-size: 1rem;
+             text-transform: uppercase;
+             color:#ff6348;
+             font-weight: 500;
+            }
+
+        .cart-price
+            {
+             font-weight: 500;
+            }
+
+        .cart-quantity
+            {
+             border:1px solid rgba(0,0,0,0.1);
+             outline:none ;
+             width: 2.4rem;
+             text-align: center;
+             font-size: 1rem;
+            }
+
+        .cart-remove
+            {
+             font-size: 24px;
+             color:red;
+             cursor: pointer;
+            }
+
+        .total
+            {
+             display: flex;
+             justify-content: flex-end;
+             margin-top: 1.5rem;
+            }
+
+        .total-title
+            {
+             font-size: 1rem;
+             font-weight: 600;
+            }
+
+        .total-price
+            {
+             margin-left: 0.5rem;
+            }
+
+        .btn-buy
+            {
+             padding: 12px 20px;
+             background-color:#2f3542;
+             color:#fff;
+             border: none;
+             font-size: 1rem;
+             font-weight: 500;
+             cursor: pointer;
+            }
+
+         #cart-close
+            {
+             position: absolute;
+             top: 1rem;
+             right: 0.8rem;
+             font-size: 2rem;
+             cursor: pointer;
+            }
+    
+        
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Dhanya Nursery</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="contact-icons">
+              <a href="tel:+1234567890" title="Call us"><i class="fas fa-phone-alt"></i></a>
+              <a href="https://wa.me/6380042710" title="WhatsApp us"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://www.instagram.com/girlbossdhxxya" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.youtube.com/channel/rukmani8256" title="Watch us on YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+    
+            <!-- Right-aligned navbar items -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="home page.html">Home</a>
+                </li>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                  Products
+                </a>
+                <ul class="dropdown-menu">
+      
+                  <li><a class="dropdown-item" href="indexUpdate.html#flower-plants">Flower Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#tree-plants">Trees</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#pot-plants">Pot Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#aqua-plants">Aqua Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#croton-plants">Croton Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#creeper-plants">Creeper Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#climber-plants">Climber Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#indoor-plants">Indoor Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#vegetable-plants">Vegetable Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#herbal-plants">Herbal Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#combo-plants">Combo Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#fruit-plants">Fruit Plants</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <!-- Cart Icon placed here -->
+          <div class="box">
+            <div class="cart-count">0</div>
+            <ion-icon name="cart" id="cart-icon"></ion-icon>
+          </div>
+        </div>
+    
+        
+    </nav>
+            
+  
+  <!-- Cart Structure -->
+  <div class="cart">
+    <div class="cart-title">Cart Items</div>
+    <div class="cart-content"></div>
+    <div class="total">
+      <div class="total-title">Total</div>
+      <div class="total-price">Rs.0</div>
+    </div>
+    <button class="btn-buy">Place Order</button>
+    <ion-icon name="close" id="cart-close"></ion-icon>
+  </div>
+
+    </div>
+
+
+    <h1>About Us</h1>
+
+    <h3>
+        Our Dhanya Nursery is located on the main NH47 in Vijayamangalam (near toll gate) in Perundurai (Erode dt).<br><br>
+        Mr. K. Jayaprakash, proprietor, has vast experience in the field for the past 20 years and we remember "Our Roots," that is,<br><br>
+        Roja Nursery, Papini, Kangayam. It is one of the well-known Nurseries from the 90's. We are producing quality seedlings like Coconut Tall,<br><br>
+        Coconut Chowghat Orange, Pkm Tamarinds, Sapotas, Amla, etc., to meet the needs of the farmers.<br><br>
+        Our Dhanya Nursery Garden is easy to reach (since it is on the main NH47) and we meet the demands of resellers like bulk purchasers,<br><br>
+        nursery and landscape people. We do both retail and wholesale activities. We have a wide range of mass collections of plants, tools, and accessories.<br><br>
+    </h3>
+    <!-- Max Size Carousel for Discounts -->
+<div id="discountCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="carouselnu8.jpg" class="d-block w-100 carousel-img" alt="Discount 1">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Discount 1: Get 10% off on Flower Plants!</h5>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="carousel flow.jfif" class="d-block w-100 carousel-img" alt="Discount 3">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Discount 2: 25% off on Creeper Plants!</h5>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="carousel flo3.jpg" class="d-block w-100 carousel-img" alt="Discount 2">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Discount 3:Monsoon Sale: Upto 30% off on all Plants!</h5>
+
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="carouselnu2.jpg" class="d-block w-100 carousel-img" alt="Discount 2">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Discount 4: Buy 1 Get 1 Free on Aqua Plants!</h5>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="carousel flo1.jpg" class="d-block w-100 carousel-img" alt="Discount 3">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Discount 5: 15% off on Croton Plants!</h5>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="carouselnu7.jpg" class="d-block w-100 carousel-img" alt="Discount 4">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Discount 6: Special Price on Vegetable Plants!</h5>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#discountCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#discountCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Custom CSS for carousel images -->
+<style>
+    /* Fix the size of carousel images */
+    .carousel-img {
+        height: 450px; /* Set a fixed height */
+        object-fit: cover; /* Maintain aspect ratio and cover the container */
+    }
+</style>
+
+</body>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Initialize Tooltips -->
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+
+
+    </script>
+    
+
+    <!-- Bootstrap JS bundle (includes Popper.js for dropdowns) -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">    
+</body>
+</html>

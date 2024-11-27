@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhanya Nursery Plants</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    
+
+    <style>
+
+        /* Body background with green plants and flowers */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+        * {
+          font-family: 'Poppins', sans-serif;
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('plant back.jpg'); /* Ensure the path is correct */
+            background-size:stretch; /* Adjust this for full coverage */
+            background-position:initial; /* Center the image */
+            background-repeat:inherit; /* No repetition for a clean look */
+            color: #186120; /* Text color */
+            }
+
+        /* Full green background for the entire navbar */
+        .navbar {
+            background-color: #046511 !important;
+            padding: 1rem 1.5rem;
+        }
+
+        /* Navbar brand (Dhanya Nursery) styling */
+        .navbar-brand {
+            color: #f4f7f4 !important;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Align contact icons in the center of the navbar */
+        .navbar .contact-icons {
+            display: flex;
+            gap: 20px;
+            background-color: white; /* White background for contact icons */
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .contact-icons a {
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        /* Specific colors for each icon */
+        .contact-icons a[href^="tel"] i {
+            color: #4CAF50;
+        }
+
+        .contact-icons a[href*="wa.me"] i {
+            color: #25D366;
+        }
+
+        .contact-icons a[href*="instagram.com"] i {
+            color: #C13584;
+        }
+
+        .contact-icons a[href*="youtube.com"] i {
+            color: #FF0000;
+        }
+
+        /* Hover effect */
+        .contact-icons a:hover i {
+            opacity: 0.8;
+        }
+
+        /* Navbar menu items aligned to the right */
+        .navbar-nav {
+      margin-left: auto;
+      flex-direction: row; /* Horizontal alignment */
+    }
+
+        /* Green background and white text for navbar items */
+        .navbar-nav .nav-link {
+      color: #f4f7f4 !important;
+      font-weight: bold;
+      font-family: 'Arial', sans-serif;
+      padding: 0.5rem 1rem; /* Space out items */
+      transition: color 0.3s;
+    }
+
+
+        /* Darker green color for hover effect on navbar links */
+        .navbar-nav .nav-link:hover {
+            color: #e2e87d !important; /* Light green on hover */
+        }
+
+        /* Dropdown menu with green background */
+        .dropdown-menu {
+            background-color: #046511;
+        }
+
+        /* Dropdown item color */
+        .dropdown-item {
+            color: #f4f7f4 !important;
+        }
+
+        /* Dropdown item hover effect */
+        .dropdown-item:hover {
+            background-color: #0f852a !important;
+        }
+
+        /* Remove light background of navbar-toggler */
+        .navbar-toggler {
+            background-color: #a7d3ad !important;
+        }
+
+        /* Ensures horizontal layout on mobile */
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .navbar-nav {
+        flex-direction: row; /* Display nav items horizontally */
+      }
+
+      .dropdown-menu {
+        position: static;
+      }
+    }
+
+
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        color: #8B4513;
+        font-size: 2.5rem;
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    h2 {
+        font-family: 'Lora', serif;
+        color: #761414;
+        font-size: 2rem;
+        line-height: 2;
+        padding: 0 2rem;
+        text-align: justify;
+        letter-spacing: 0.5px;
+    }
+
+    h3 {
+        font-family: 'Georgia', serif;
+        color: #4B0082; /* Deep violet for elegance */
+        text-align: justify;
+        line-height: 1.8;
+        font-size: 1.2rem; /* Slightly larger for readability */
+        margin: 15px 30px;
+        padding: 10px;
+        background-color: #f4f4f4; /* Soft background for better contrast */
+        border-left: 5px solid #4B0082; /* Elegant border to the left */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    }
+
+    .welcome-title {
+        color: #2e8b57; /* A stylish green color */
+        font-size: 1.5rem;
+        font-weight: bold;
+        border: 2px solid #98fb98; /* Light green border */
+        text-align: center;
+        padding: 15px;
+        margin: 20px auto;
+        background-color: #f0fff0; /* Light green background */
+        border-radius: 8px; /* Rounded corners */
+    }
+
+        .shop-content
+            {
+             display: grid;
+             grid-template-columns: repeat(auto-fit,minmax(220px,auto));
+             gap:1.5rem;
+             justify-content: center;
+             align-content: center;
+            }
+
+        .plant-box
+            {
+             position: relative;
+             background-color: #fff;
+             padding: 10px;
+             box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+             border-radius: 3px;
+            }
+
+        .pic{
+            overflow: hidden;
+            }
+
+        .pic:hover img
+            {
+             transform: scale(1.5);
+            }
+
+        .plant-img
+            {
+             transition: 0.4s;
+             aspect-ratio: 1/1;
+             object-fit: cover;
+            }
+
+        .plant-title
+            {
+            font-size: 1rem;
+            font-weight: 600;
+            color:#ff6348;
+            }
+
+        .plant-price
+            {
+             font-weight:500 ;
+            }
+
+        .add-cart
+            {
+             position: absolute;
+             bottom: 0;
+             right: 0;
+             background-color: #2ed573;
+             color:white;
+             padding: 10px;
+             font-size: 1.1rem;
+             cursor: pointer;
+             transition: 0.5s;
+            }
+
+        .add-cart:hover
+            {
+             background-color:rgba(255, 0, 0, 0.786);
+            }
+  
+
+            .cart {
+      position: fixed;
+      top: 0;
+      right: -50%;
+      width: 400px;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+      z-index: 100;
+    }
+
+    .cart-active {
+      right: 0;
+      transition: 0.5s;
+    }
+
+        .cart-title
+            {
+             text-align: center;
+             font-size: 1.5rem;
+             font-weight: 500;
+             margin-bottom: 1rem;
+             padding-bottom:20px ;
+             border-bottom: 1px solid rgba(0,0,0,0.1);
+            }
+
+        .cart-box
+            {
+             display: grid;
+             grid-template-columns: 32% 50% 18%;
+             align-items: center;
+             gap: 1rem;
+             margin-top: 1rem;
+             border-bottom: 1px solid rgba(0,0,0,0.1);
+             padding-bottom: 10px;
+            }
+
+        .cart-img
+            {
+             width: 75px;
+             height: 75px;
+             object-fit: cover;
+             border:2px solid  rgba(0,0,0,0.1);
+             padding: 5px;
+            }
+        .detail-box
+            {
+             display: grid;
+             row-gap: 0.5rem;  
+            }
+
+        .price-box
+            {
+             display: flex;
+             justify-content: space-between; 
+            }
+
+        .cart-plant-title
+            {
+             font-size: 1rem;
+             text-transform: uppercase;
+             color:#ff6348;
+             font-weight: 500;
+            }
+
+        .cart-price
+            {
+             font-weight: 500;
+            }
+
+        .cart-quantity
+            {
+             border:1px solid rgba(0,0,0,0.1);
+             outline:none ;
+             width: 2.4rem;
+             text-align: center;
+             font-size: 1rem;
+            }
+
+        .cart-remove
+            {
+             font-size: 24px;
+             color:red;
+             cursor: pointer;
+            }
+
+        .total
+            {
+             display: flex;
+             justify-content: flex-end;
+             margin-top: 1.5rem;
+            }
+
+        .total-title
+            {
+             font-size: 1rem;
+             font-weight: 600;
+            }
+
+        .total-price
+            {
+             margin-left: 0.5rem;
+            }
+
+        .btn-buy
+            {
+             padding: 12px 20px;
+             background-color:#2f3542;
+             color:#fff;
+             border: none;
+             font-size: 1rem;
+             font-weight: 500;
+             cursor: pointer;
+            }
+
+         #cart-close
+            {
+             position: absolute;
+             top: 1rem;
+             right: 0.8rem;
+             font-size: 2rem;
+             cursor: pointer;
+            }
+        
+
+        /* Styling for the grid images */
+        .circle {
+            width: 90px;
+            height: 90px;
+            overflow: hidden;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+
+        .circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .no-gutters > .col,
+        .no-gutters > [class*="col-"] {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        /* Center text below each circle */
+        .plant-name {
+            margin-top: 5px;
+            text-align: center;
+            font-size: 14px;
+            color: #046511;
+        }
+
+        /* Reduced top margin for container */
+        .plant-grid-container {
+            margin-top: 1rem; /* Adjust as needed */
+        }
+
+        .cart-count {
+      position: absolute;
+      background-color: #2f3542;
+      top: -5px;
+      right: 0;
+      padding: 3px;
+      height: 20px;
+      width: 20px;
+      line-height: 20px;
+      border-radius: 50%;
+      z-index: 99;
+    }
+
+    #cart-icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding-top: 10px;
+      color: #f4f7f4; /* Ensure icon is visible */
+    }
+
+        img{
+            width: 100%;
+           }
+
+        .container
+            {
+            max-width: 1200px;
+            padding: 4rem;
+            margin: auto;
+            width: 100%;
+            }
+
+        h2.title
+            {
+             background-color: #fcfcfa;
+             font-size: 2rem;
+             font-weight: 100;
+             margin-bottom: 1.1rem;
+             color:hsl(317, 87%, 33%);
+             font-weight: 600;
+            }
+
+        .shop-content
+            {
+             display: grid;
+             grid-template-columns: repeat(auto-fit,minmax(220px,auto));
+             gap:1.5rem;
+             justify-content: center;
+             align-content: center;
+            }
+
+        .plant-box
+            {
+             position: relative;
+             background-color: #fff;
+             padding: 10px;
+             box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+             border-radius: 3px;
+            }
+
+        .pic{
+            overflow: hidden;
+            }
+
+        .pic:hover img
+            {
+             transform: scale(1.5);
+            }
+
+        .plant-img
+            {
+             transition: 0.4s;
+             aspect-ratio: 1/1;
+             object-fit: cover;
+            }
+
+        .plant-title
+            {
+            font-size: 1rem;
+            font-weight: 600;
+            color:#ff6348;
+            }
+
+        .plant-price
+            {
+             font-weight:500 ;
+            }
+
+        .add-cart
+            {
+             position: absolute;
+             bottom: 0;
+             right: 0;
+             background-color: #2ed573;
+             color:white;
+             padding: 10px;
+             font-size: 1.1rem;
+             cursor: pointer;
+             transition: 0.5s;
+            }
+
+        .add-cart, .cart-remove 
+            {
+             transition: background-color 0.5s;
+             cursor: pointer;
+            }
+
+
+        .add-cart:hover
+            {
+             background-color:rgba(255, 0, 0, 0.786);
+            }
+  
+
+            .cart {
+      position: fixed;
+      top: 0;
+      right: -50%;
+      width: 400px;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+      z-index: 100;
+    }
+
+    .cart-active {
+      right: 0;
+      transition: 0.5s;
+    }
+
+        .cart-title
+            {
+             text-align: center;
+             font-size: 1.5rem;
+             font-weight: 500;
+             margin-bottom: 1rem;
+             padding-bottom:20px ;
+             border-bottom: 1px solid rgba(0,0,0,0.1);
+            }
+
+        .cart-box
+            {
+             display: grid;
+             grid-template-columns: 32% 50% 18%;
+             align-items: center;
+             gap: 1rem;
+             margin-top: 1rem;
+             border-bottom: 1px solid rgba(0,0,0,0.1);
+             padding-bottom: 10px;
+            }
+
+        .cart-img
+            {
+             width: 75px;
+             height: 75px;
+             object-fit: cover;
+             border:2px solid  rgba(0,0,0,0.1);
+             padding: 5px;
+            }
+        .detail-box
+            {
+             display: grid;
+             row-gap: 0.5rem;  
+            }
+
+        .price-box
+            {
+             display: flex;
+             justify-content: space-between; 
+            }
+
+        .cart-plant-title
+            {
+             font-size: 1rem;
+             text-transform: uppercase;
+             color:#ff6348;
+             font-weight: 500;
+            }
+
+        .cart-price
+            {
+             font-weight: 500;
+            }
+
+        .cart-quantity
+            {
+             border:1px solid rgba(0,0,0,0.1);
+             outline:none ;
+             width: 2.4rem;
+             text-align: center;
+             font-size: 1rem;
+            }
+
+        .cart-remove
+            {
+             font-size: 24px;
+             color:red;
+             cursor: pointer;
+            }
+
+        .total
+            {
+             display: flex;
+             justify-content: flex-end;
+             margin-top: 1.5rem;
+            }
+
+        .total-title
+            {
+             font-size: 1rem;
+             font-weight: 600;
+            }
+
+        .total-price
+            {
+             margin-left: 0.5rem;
+            }
+
+        .btn-buy
+            {
+             padding: 12px 20px;
+             background-color:#2f3542;
+             color:#fff;
+             border: none;
+             font-size: 1rem;
+             font-weight: 500;
+             cursor: pointer;
+            }
+
+         #cart-close
+            {
+             position: absolute;
+             top: 1rem;
+             right: 0.8rem;
+             font-size: 2rem;
+             cursor: pointer;
+            }
+    
+        
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Dhanya Nursery</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="contact-icons">
+              <a href="tel:+1234567890" title="Call us"><i class="fas fa-phone-alt"></i></a>
+              <a href="https://wa.me/6380042710" title="WhatsApp us"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://www.instagram.com/girlbossdhxxya" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.youtube.com/channel/rukmani8256" title="Watch us on YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+    
+            <!-- Right-aligned navbar items -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="home page.html">Home</a>
+                </li>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                  Products
+                </a>
+                <ul class="dropdown-menu">
+      
+                  <li><a class="dropdown-item" href="indexUpdate.html#flower-plants">Flower Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#tree-plants">Trees</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#pot-plants">Pot Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#aqua-plants">Aqua Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#croton-plants">Croton Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#creeper-plants">Creeper Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#climber-plants">Climber Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#indoor-plants">Indoor Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#vegetable-plants">Vegetable Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#herbal-plants">Herbal Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#combo-plants">Combo Plants</a></li>
+                  <li><a class="dropdown-item" href="indexUpdate.html#fruit-plants">Fruit Plants</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <!-- Cart Icon placed here -->
+          <div class="box">
+            <div class="cart-count">0</div>
+            <ion-icon name="cart" id="cart-icon"></ion-icon>
+          </div>
+        </div>
+    
+        
+    </nav>
+            
+  
+  <!-- Cart Structure -->
+  <div class="cart">
+    <div class="cart-title">Cart Items</div>
+    <div class="cart-content"></div>
+    <div class="total">
+      <div class="total-title">Total</div>
+      <div class="total-price">Rs.0</div>
+    </div>
+    <button class="btn-buy">Place Order</button>
+    <ion-icon name="close" id="cart-close"></ion-icon>
+  </div>
+
+               <!-- Circular Plant Sections Grid Card Space -->
+    <div class="container mt-5">
+        <div class="row no-gutters justify-content-center">
+            <!-- Flower Plants -->
+            <div class="col-lg-1 col-md-3 col-sm-3 col-3 mb-3">
+                <div class="text-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Flower Plants">
+            
+                    <div class="circle">
+                        <a href="indexUpdate.html#flower-plants" class="d-block">
+                            <img src="flowering.avif" alt="Flower Plants">
+                        
+                        
+                    </div>
+                    <p class="plant-name">Flower Plants</p>
+                        </a>
+
+                </div>
+            </div>
+    
+
+            <!-- Trees Plants -->
+            <div class="col-lg-1 col-md-3 col-sm-3 col-3 mb-3">
+                <div class="text-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Trees">        <div class="circle">
+                        <a href="indexUpdate.html#tree-plants" class="d-block">
+                            <img src="tree2.avif" alt="Trees">
+                        
+                    </div>
+                    <p class="plant-name">Trees</p>
+                        </a>
+                </div>
+            </div>
+                
+                
+                <!-- Pot Plants -->
+                <div class="col-lg-1 col-md-3 col-sm-3 col-3 mb-3">
+                    <div class="text-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Pot Plants">        
+                        <div class="circle">
+                    <a href="indexUpdate.html#pot-plants" class="d-block">
+                        <img src="potplant.jpg" alt="Pot Plants">
+                    
+                </div>
+                    <p class="plant-name">Pot Plants</p>
+                    </a>
+            </div>
+        </div>
+        
+    <!-- Aqua Plants -->
+    <div class="col-lg-1 col-md-3 col-sm-3 col-3 mb-3">
+        <div class="text-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Aqua Plants">        <a href="indexUpdate.html#aqua-plants" class="d-block"> <!-- Wraps both image and text -->
+                <div class="circle">
+                    <img src="AQUATIC2.jpg" alt="Aqua Plants">
+                </div>
+                <p class="plant-name">Aquatic Plants</p>
+            </a>
+        </div>
+    </div>
+    <!-- Croton Plants -->
+    <div class="col-lg-1 col-md-3 col-sm-3 col-3 mb-3">
+        <div class="text-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Croton Plants">        
+            <div class="circle">
+                <a href="indexUpdate.html#croton-plants" class="d-block">
+                    <img src="croton plant.jpg" alt="Croton Plants">
+                
+            </div>
+                <p class="plant-name">Croton Plants</p>
+                </a>
+        </div>
+    </div>
+    <!-- Creeper Plants -->
+    <div class="col-lg-1 col-md-3 col-sm-3 col-3 mb-3">
+        <div class="text-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Creeper Plants">
+            <a href="indexUpdate.html#creeper-plants" class="d-block">
+                <div class="circle">
+                    <img src="rangoon creeper.jpg" alt="Creeper Plants">
+                </div>
+                <p class="plant-name">Creeper Plants</p>
+            </a>
+        </div>
+    </div>
+                
+    
+    <!-- Climber Plants -->
+                <div class="col-lg-1 col-md-3 col-sm-3 col-3 mb-3">
+                    <div class="text-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Climber Plants">        
+                        <div class="circle">
+                <a href="indexUpdate.html#climber-plants" class="d-md-block">
+                    <img src="climber.jpg" alt="Climber Plants">
+                
+            </div>
+                <p class="plant-name">Climber Plants</p>
+                </a>
+        </div>
+    </div>
+                <!-- Indoor Plants -->
+                <div class="col-lg-1 col-md-3 col-sm-3 col-3 mb-3">
+                    <div class="text-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Indoor Plants">        
+                        <div class="circle">
+                <a href="indexUpdate.html#indoor-plants" class="d-block">
+                    <img src="LuckyBamboo649.avif" alt="Indoor Plants">
+                
+             </div>
+                <p class="plant-name">Indoor Plants</p>
+                </a>
+        </div>
+    </div>
+    
+      <!-- Vegetable Plants -->
+      <div class="col-lg-1 col-md-3 col-sm-3 col-3 mb-3">
+        <div class="text-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Vegetable Plants">       
+            <div class="circle">
+                 <a href="indexUpdate.html#vegetable-plants" class="d-block">
+                     <img src="detroit-dark-red-beet-plant455.jpeg" alt="Vegetable Plants">
+                 
+             </div>
+                 <p class="plant-name">Vegetable Plants</p>
+                 </a>
+         </div>
+     </div>
+    
+    
+    
+    
+                <!-- Herbal Plants -->
+                <div class="col-lg-1 col-md-3 col-sm-3 col-3 mb-3">
+                    <div class="text-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Herbal Plants">        
+                        <div class="circle">
+                <a href="indexUpdate.html#herbal-plants" class="d-block">
+                    <img src="herb-manjal karisalankanni.jpg" alt="Herbal Plants">
+                
+            </div>
+                <p class="plant-name">Herbal Plants</p>
+                </a>
+        </div>
+    </div>
+    
+                
+    
+                <!-- Combo Plants -->
+                <div class="col-lg-1 col-md-3 col-sm-3 col-3 mb-3">
+                    <div class="text-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Combo Plants">        <div class="circle">
+                <a href="indexUpdate.html#combo-plants" class="d-block">
+                    <img src="combo.jpg" alt="Combo Plants">
+                
+            </div>
+                <p class="plant-name">Combo Plants</p>
+                </a>
+        </div>
+    </div>
+    
+                <!-- Fruit Plants -->
+                <div class="col-lg-1 col-md-3 col-sm-3 col-3 mb-3">
+                    <div class="text-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Fruit Plants">        
+                        <div class="circle">
+                <a href="indexUpdate.html#fruit-plants" class="d-block">
+                         
+                    <img src="grafted hybrid.jpg" alt="Fruit Plants">
+            </div>
+                <p class="plant-name">Fruit Plants</p>
+                </a>
+                        
+        </div>
+    </div>
+    
+
+    
+    </div>
+
+
+<!-- Welcome Section -->
+<h2 class="welcome-title">
+    Welcome To Dhanya Nursery
+</h2>
+<h3>
+    Hearty Welcome to the world of gardening and nature. <br><br>
+    We always welcome you to enjoy nature all around 365 days...<br><br>
+    "We Believe That Something Wonderful Is About To Happen"<br><br>
+    In the nursery field, that wonderful will happen by us. We are in close relation to nature. <br><br>
+    We are tremendously creative and hardworking.<br><br>
+    We have dedicated employees who truly enjoy working with plants. Our nursery is a grand space filled with plants and greenery.<br><br>
+    Developed for plant lovers and garden enthusiasts, our nursery has gained immense appreciation from our beloved clients—these accolades are valuable awards to us.<br><br>
+</h3>
+
+</body>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Initialize Tooltips -->
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+
+
+    </script>
+    
+
+    <!-- Bootstrap JS bundle (includes Popper.js for dropdowns) -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">    
+</body>
+</html>

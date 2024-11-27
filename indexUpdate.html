@@ -1,0 +1,2176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dhanya Nursery Plants</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+    * {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url('plant backflo.jpg');
+      background-size: contain;
+      background-position: center;
+      background-repeat: repeat;
+      color: #186120;
+    }
+
+    .navbar {
+      background-color: #046511 !important;
+      padding: 1rem 1.5rem;
+    }
+
+    .navbar-brand {
+      color: #f7f7f4 !important;
+      font-size: large;
+      font-weight: bold;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .contact-icons {
+      display: flex;
+      gap: 20px;
+      background-color: white; /* White background for contact icons */
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin: 0 auto; /* Center the icons */
+    }
+
+    .contact-icons a {
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact-icons a[href^="tel"] i {
+      color: #4CAF50;
+    }
+
+    .contact-icons a[href*="wa.me"] i {
+      color: #25D366;
+    }
+
+    .contact-icons a[href*="instagram.com"] i {
+      color: #C13584;
+    }
+
+    .contact-icons a[href*="youtube.com"] i {
+      color: #FF0000;
+    }
+
+    .contact-icons a:hover i {
+      opacity: 0.8;
+    }
+
+    .navbar-nav {
+      margin-left: auto;
+      flex-direction: row; /* Horizontal alignment */
+    }
+
+
+    .navbar-nav .nav-link {
+      color: #f4f7f4 !important;
+      font-weight: bold;
+      font-family: 'Arial', sans-serif;
+      padding: 0.5rem 1rem; /* Space out items */
+      transition: color 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #e2e87d !important; /* Light green on hover */
+    }
+
+    .dropdown-menu {
+      background-color: #046511;
+    }
+
+    .dropdown-item {
+      color: #f4f7f4 !important;
+    }
+
+    .dropdown-item:hover {
+      background-color: #0f852a !important;
+    }
+
+    .navbar-toggler {
+      background-color: #a7d3ad !important;
+    }
+
+    /* Ensures horizontal layout on mobile */
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .navbar-nav {
+        flex-direction: row; /* Display nav items horizontally */
+      }
+
+      .dropdown-menu {
+        position: static;
+      }
+    }
+
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: #8B4513;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    h2 {
+      font-family: 'Lora', serif;
+      color: #7f67ca;
+      font-size: 2rem;
+      line-height: 2;
+      padding: 0 2rem;
+      text-align: justify;
+      letter-spacing: 0.5px;
+    }
+
+    .cart-count {
+      position: absolute;
+      background-color: #2f3542;
+      top: -5px;
+      right: 0;
+      padding: 3px;
+      height: 20px;
+      width: 20px;
+      line-height: 20px;
+      border-radius: 50%;
+      z-index: 99;
+    }
+
+    #cart-icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding-top: 10px;
+      color: #f4f7f4; /* Ensure icon is visible */
+    }
+
+        img{
+            width: 100%;
+           }
+
+        .container
+            {
+            max-width: 1200px;
+            padding: 4rem;
+            margin: auto;
+            width: 100%;
+            }
+
+        h2.title
+            {
+             background-color: #fcfcfa;
+             font-size: 2rem;
+             font-weight: 100;
+             margin-bottom: 1.1rem;
+             color:hsl(317, 87%, 33%);
+             font-weight: 600;
+            }
+
+        .shop-content
+            {
+             display: grid;
+             grid-template-columns: repeat(auto-fit,minmax(220px,auto));
+             gap:1.5rem;
+             justify-content: center;
+             align-content: center;
+            }
+
+        .plant-box
+            {
+             position: relative;
+             background-color: #fff;
+             padding: 10px;
+             box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+             border-radius: 3px;
+            }
+
+        .pic{
+            overflow: hidden;
+            }
+
+        .pic:hover img
+            {
+             transform: scale(1.5);
+            }
+
+        .plant-img
+            {
+             transition: 0.4s;
+             aspect-ratio: 1/1;
+             object-fit: cover;
+            }
+
+        .plant-title
+            {
+            font-size: 1rem;
+            font-weight: 600;
+            color:#ff6348;
+            }
+
+        .plant-price
+            {
+             font-weight:500 ;
+            }
+
+        .add-cart
+            {
+             position: absolute;
+             bottom: 0;
+             right: 0;
+             background-color: #2ed573;
+             color:white;
+             padding: 10px;
+             font-size: 1.1rem;
+             cursor: pointer;
+             transition: 0.5s;
+             }
+
+
+             .add-cart, .cart-remove 
+             {
+                transition: background-color 0.5s;
+                cursor: pointer;
+             }
+
+        .add-cart:hover
+            {
+             background-color:rgba(255, 0, 0, 0.786);
+            }
+  
+
+            .cart {
+      position: fixed;
+      top: 0;
+      right: -50%;
+      width: 400px;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+      z-index: 100;
+    }
+
+    .cart-active {
+      right: 0;
+      transition: 0.5s;
+    }
+
+        .cart-title
+            {
+             text-align: center;
+             font-size: 1.5rem;
+             font-weight: 500;
+             margin-bottom: 1rem;
+             padding-bottom:20px ;
+             border-bottom: 1px solid rgba(0,0,0,0.1);
+            }
+
+        .cart-box
+            {
+             display: grid;
+             grid-template-columns: 32% 50% 18%;
+             align-items: center;
+             gap: 1rem;
+             margin-top: 1rem;
+             border-bottom: 1px solid rgba(0,0,0,0.1);
+             padding-bottom: 10px;
+            }
+
+        .cart-img
+            {
+             width: 75px;
+             height: 75px;
+             object-fit: cover;
+             border:2px solid  rgba(0,0,0,0.1);
+             padding: 5px;
+            }
+        .detail-box
+            {
+             display: grid;
+             row-gap: 0.5rem;  
+            }
+
+        .price-box
+            {
+             display: flex;
+             justify-content: space-between; 
+            }
+
+        .cart-plant-title
+            {
+             font-size: 1rem;
+             text-transform: uppercase;
+             color:#ff6348;
+             font-weight: 500;
+            }
+
+        .cart-price
+            {
+             font-weight: 500;
+            }
+
+        .cart-quantity
+            {
+             border:1px solid rgba(0,0,0,0.1);
+             outline:none ;
+             width: 2.4rem;
+             text-align: center;
+             font-size: 1rem;
+            }
+
+        .cart-remove
+            {
+             font-size: 24px;
+             color:red;
+             cursor: pointer;
+            }
+
+        .total
+            {
+             display: flex;
+             justify-content: flex-end;
+             margin-top: 1.5rem;
+            }
+
+        .total-title
+            {
+             font-size: 1rem;
+             font-weight: 600;
+            }
+
+        .total-price
+            {
+             margin-left: 0.5rem;
+            }
+
+        .btn-buy
+            {
+             padding: 12px 20px;
+             background-color:#2f3542;
+             color:#fff;
+             border: none;
+             font-size: 1rem;
+             font-weight: 500;
+             cursor: pointer;
+            }
+
+         #cart-close
+            {
+             position: absolute;
+             top: 1rem;
+             right: 0.8rem;
+             font-size: 2rem;
+             cursor: pointer;
+            }
+        
+
+    </style>
+</head>
+<body>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Dhanya Nursery</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="contact-icons">
+            <a href="tel:+1234567890" title="Call us"><i class="fas fa-phone-alt"></i></a>
+            <a href="https://wa.me/6380042710" title="WhatsApp us"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/girlbossdhxxya" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/rukmani8256" title="Watch us on YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+  
+          <!-- Right-aligned navbar items -->
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="home page.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Products
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="indexUpdate.html#flower-plants">Flower Plants</a></li>
+                <li><a class="dropdown-item" href="indexUpdate.html#tree-plants">Trees</a></li>
+                <li><a class="dropdown-item" href="indexUpdate.html#pot-plants">Pot Plants</a></li>
+                <li><a class="dropdown-item" href="indexUpdate.html#aqua-plants">Aqua Plants</a></li>
+                <li><a class="dropdown-item" href="indexUpdate.html#croton-plants">Croton Plants</a></li>
+                <li><a class="dropdown-item" href="indexUpdate.html#creeper-plants">Creeper Plants</a></li>
+                <li><a class="dropdown-item" href="indexUpdate.html#climber-plants">Climber Plants</a></li>
+                <li><a class="dropdown-item" href="indexUpdate.html#indoor-plants">Indoor Plants</a></li>
+                <li><a class="dropdown-item" href="indexUpdate.html#vegetable-plants">Vegetable Plants</a></li>
+                <li><a class="dropdown-item" href="indexUpdate.html#herbal-plants">Herbal Plants</a></li>
+                <li><a class="dropdown-item" href="indexUpdate.html#combo-plants">Combo Plants</a></li>
+                <li><a class="dropdown-item" href="indexUpdate.html#fruit-plants">Fruit Plants</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Cart Icon placed here -->
+      <div class="box">
+        <div class="cart-count">0</div>
+        <ion-icon name="cart" id="cart-icon" onclick="toggleCart()" aria-label="View Cart"></ion-icon>
+      </div>
+    </div>
+  </nav>
+          
+
+          
+
+          <div class="cart">
+            <div class="cart-title">Cart Items</div>
+            <div class="cart-content"></div>
+          <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price">Rs.0</div>
+        </div>
+        <button class="btn-buy">Place Order</button>
+        <ion-icon name="close" id="cart-close"></ion-icon>
+      </div>
+    </div>
+  </header>
+  <!-- Flower Plants Section -->
+<div class="container" id="flower-plants">
+  <h2 class="title">Flower Plants</h2>
+  <div class="shop-content">
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Allamanda40.jpg" class="plant-img" alt="Allamanda plant">
+      </div>
+      <h2 class="plant-title">Allamanda</h2>
+      <span class="plant-price" style="color: #FFD700; font-weight: bold;">Rs.40</span>
+      <p class="plant-description">Allamanda features bright yellow trumpet-shaped flowers that add a cheerful touch to any garden. </p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (Approx. 2-3 feet) <br>
+        <strong>Color:</strong> Bright yellow <br>
+        <strong>Shape:</strong> Trumpet-shaped flowers <br>
+        <strong>Quality:</strong> Fresh, vibrant blooms for a stunning garden display
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <div class="plant-box">
+      <div class="pic">
+        <img src="BigParijatham49.jpg" class="plant-img" alt="Parijatham plant">
+      </div>
+      <h2 class="plant-title">Parijatham</h2>
+      <span class="plant-price" style="color: #FF4500; font-weight: bold;">Rs.49</span>
+      <p class="plant-description">Parijatham is a fragrant beauty with white and orange flowers </p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to medium (Approx. 2 feet) <br>
+        <strong>Color:</strong> White with orange accents <br>
+        <strong>Shape:</strong> Small, fragrant flowers in clusters <br>
+        <strong>Quality:</strong> Fragrant, fresh blooms for a serene ambiance
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <div class="plant-box">
+      <div class="pic">
+        <img src="BougainvillePink59.jpg" class="plant-img" alt="Bougainville Pink plant">
+      </div>
+      <h2 class="plant-title">Bougainville Pink</h2>
+      <span class="plant-price" style="color: #FF69B4; font-weight: bold;">Rs.59</span>
+      <p class="plant-description">The Bougainville Pink features vibrant pink bracts that make it a perfect choice for hedges, trellises, and garden fences, offering year-round beauty.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Large (Up to 6 feet) <br>
+        <strong>Color:</strong> Bright pink bracts <br>
+        <strong>Shape:</strong> Clusters of papery bracts with small flowers <br>
+        <strong>Quality:</strong> Hardy, vibrant, and colorful for fences or trellises
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Decemblubell barleria40.jpg" class="plant-img" alt="December Bluebell plant">
+      </div>
+      <h2 class="plant-title">December Bluebell</h2>
+      <span class="plant-price" style="color: #87CEEB; font-weight: bold;">Rs.40</span>
+      <p class="plant-description">The December Bluebell is a delicate beauty, showcasing soft blue flowers that bloom throughout the season.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small (Approx. 1-2 feet) <br>
+        <strong>Color:</strong> Soft blue <br>
+        <strong>Shape:</strong> Bell-shaped flowers <br>
+        <strong>Quality:</strong> Beautiful, seasonal bloom with a gentle fragrance
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <div class="plant-box">
+      <div class="pic">
+        <img src="hibiscus Viceroy45.jpg" class="plant-img" alt="Hibiscus Viceroy plant">
+      </div>
+      <h2 class="plant-title">Hibiscus Viceroy</h2>
+      <span class="plant-price" style="color: #DC143C; font-weight: bold;">Rs.45</span>
+      <p class="plant-description">Hibiscus Viceroy blooms with large, vibrant flowers.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (Approx. 3 feet) <br>
+        <strong>Color:</strong> Red, pink, or yellow <br>
+        <strong>Shape:</strong> Large, showy flowers <br>
+        <strong>Quality:</strong> Vibrant and tropical, ideal for garden displays
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <div class="plant-box">
+      <div class="pic">
+        <img src="PavalaMalli50.jpg" class="plant-img" alt="Pavala Malli plant">
+      </div>
+      <h2 class="plant-title">Pavala Malli</h2>
+      <span class="plant-price" style="color: #FF6347; font-weight: bold;">Rs.50</span>
+      <p class="plant-description">Known for its unique coral-colored flowers,  creating a beautiful contrast with other plants.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to medium (Approx. 2-3 feet) <br>
+        <strong>Color:</strong> Coral red <br>
+        <strong>Shape:</strong> Small, tubular flowers in clusters <br>
+        <strong>Quality:</strong> Hardy, vibrant flowers for garden borders or containers
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <div class="plant-box">
+      <div class="pic">
+        <img src="ixora red45.jpg" class="plant-img" alt="Ixora Red plant">
+      </div>
+      <h2 class="plant-title">Ixora Red</h2>
+      <span class="plant-price" style="color: #FF0000; font-weight: bold;">Rs.45</span>
+      <p class="plant-description">Ixora Red is a compact shrub with clusters of bright red flowers.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to medium (Approx. 2-3 feet) <br>
+        <strong>Color:</strong> Bright red <br>
+        <strong>Shape:</strong> Small, cluster-like flowers <br>
+        <strong>Quality:</strong> Compact, vibrant blooms perfect for garden displays
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <div class="plant-box">
+      <div class="pic">
+        <img src="AbracadabraRose349.webp" class="plant-img" alt="Abracadabra Rose plant">
+      </div>
+      <h2 class="plant-title">Abracadabra Rose</h2>
+      <span class="plant-price" style="color: #800000; font-weight: bold;">Rs.349</span>
+      <p class="plant-description">A rare and exotic rose with a mesmerizing blend of red and yellow streaks.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium to large (Approx. 3-4 feet) <br>
+        <strong>Color:</strong> Red with yellow streaks <br>
+        <strong>Shape:</strong> Large, multi-layered petals <br>
+        <strong>Quality:</strong> Rare, fragrant blooms ideal for gifting or special occasions
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+  </div>
+</div>
+
+
+<!-- Trees Section -->
+<div class="container" id="tree-plants">
+  <h2 class="title">Trees</h2>
+  <div class="shop-content">
+
+    <!-- Kiwi Hayward -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="kiwi Hayward980.webp" class="plant-img" alt="Kiwi Hayward">
+      </div>
+      <h2 class="plant-title">Kiwi Hayward</h2>
+      <span class="plant-price" style="color: #6B8E23; font-weight: bold;">Rs.980</span>
+      <p class="plant-description">A medium-sized, deciduous vine that produces large, sweet, and juicy fruits with a tangy taste. The vine has heart-shaped, lush green leaves and yields fuzzy.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (6-8 feet tall) <br>
+        <strong>Color:</strong> Green leaves, brown fruits <br>
+        <strong>Shape:</strong> Heart-shaped leaves, oval kiwi fruits <br>
+        <strong>Quality:</strong> High-quality seeds for consistent growth and flavorful fruit production.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Madras Thorn (Kodukka Puli) -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Madras-Thorn-Plant-Kodukka-Puli39.jpg" class="plant-img" alt="Madras Thorn">
+      </div>
+      <h2 class="plant-title">Madras Thorn (Kodukka Puli)</h2>
+      <span class="plant-price" style="color: #8B4513; font-weight: bold;">Rs.150</span>
+      <p class="plant-description">A small, hardy tree with dense, dark green foliage and small, edible pods that are widely used in traditional cuisine.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small (5-6 feet) <br>
+        <strong>Color:</strong> Green leaves, brown pods <br>
+        <strong>Shape:</strong> Dense, bushy foliage, pod-bearing <br>
+        <strong>Quality:</strong> Drought-resistant, hardy, and ideal for sunny spots.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Vilvam (Aegle Marmelos) -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Aegle-Marmelos-Koovalam-Vilvam39.jpg" class="plant-img" alt="Vilvam Tree">
+      </div>
+      <h2 class="plant-title">Vilvam (Aegle Marmelos)</h2>
+      <span class="plant-price" style="color: #FF8C00; font-weight: bold;">Rs.100</span>
+      <p class="plant-description">A sacred tree known for its aromatic leaves and medicinal fruits.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to medium (6-8 feet) <br>
+        <strong>Color:</strong> Green leaves, yellow fruits <br>
+        <strong>Shape:</strong> Broad leaves, round fruits <br>
+        <strong>Quality:</strong> Aromatic and therapeutic, ideal for spiritual or medicinal gardens.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Casuarina Savukku -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="CasuarinaSavukku20.jpeg" class="plant-img" alt="Casuarina Savukku">
+      </div>
+      <h2 class="plant-title">Casuarina Savukku</h2>
+      <span class="plant-price" style="color: #228B22; font-weight: bold;">Rs.202</span>
+      <p class="plant-description">A fast-growing tree known for its slender, needle-like foliage that creates a tall, columnar form.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium to large (up to 25 feet) <br>
+        <strong>Color:</strong> Green needle-like foliage <br>
+        <strong>Shape:</strong> Tall, columnar with dense foliage <br>
+        <strong>Quality:</strong> Fast-growing, perfect for shade and windbreaks.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Blackstone Mango -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Blackstone Mango899.jpg" class="plant-img" alt="Blackstone Mango">
+      </div>
+      <h2 class="plant-title">Blackstone Mango</h2>
+      <span class="plant-price" style="color: #FFA500; font-weight: bold;">Rs.899</span>
+      <p class="plant-description">A premium mango variety that produces large, delicious fruits with a rich, sweet flavor.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Large (up to 20 feet) <br>
+        <strong>Color:</strong> Green leaves, orange-red fruits <br>
+        <strong>Shape:</strong> Oval mangoes with smooth skin <br>
+        <strong>Quality:</strong> High-yield, premium quality fruit with exceptional flavor.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Nagalingam (Couroupita Guianensis) -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="nagalingam -couroupita guianensis.jpg" class="plant-img" alt="Nagalingam Tree">
+      </div>
+      <h2 class="plant-title">Nagalingam (Couroupita Guianensis)</h2>
+      <span class="plant-price" style="color: #DB7093; font-weight: bold;">Rs.60</span>
+      <p class="plant-description">Commonly known as the Cannonball Tree, it thrives in tropical climates and is ideal for tropical or exotic gardens.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (up to 30 feet) <br>
+        <strong>Color:</strong> Pink flowers, brown cannonball fruits <br>
+        <strong>Shape:</strong> Round flowers, spherical fruits <br>
+        <strong>Quality:</strong> Fragrant blooms, stunning tropical appearance.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Bottlebrush Tree -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Bottlebrush-tree.jpg" class="plant-img" alt="Bottlebrush Tree">
+      </div>
+      <h2 class="plant-title">Bottlebrush Tree</h2>
+      <span class="plant-price" style="color: #FF0000; font-weight: bold;">Rs.159</span>
+      <p class="plant-description">A compact, low-maintenance tree that produces striking, red, bottlebrush-like flowers.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to medium (up to 10 feet) <br>
+        <strong>Color:</strong> Red, brush-like flowers <br>
+        <strong>Shape:</strong> Upright growth with brush-shaped blossoms <br>
+        <strong>Quality:</strong> Hardy, vibrant blooms that require minimal care.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Neem Tree (Azadirachta Indica) -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="azadirachta indica-neemtree.jpg" class="plant-img" alt="Neem Tree">
+      </div>
+      <h2 class="plant-title">Neem Tree (Azadirachta Indica)</h2>
+      <span class="plant-price" style="color: #556B2F; font-weight: bold;">Rs.240</span>
+      <p class="plant-description">A large, fast-growing tree known for its medicinal leaves and air-purifying properties.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Large (up to 40 feet) <br>
+        <strong>Color:</strong> Green leaves, white flowers <br>
+        <strong>Shape:</strong> Broad, spreading canopy <br>
+        <strong>Quality:</strong> Medicinal, air-purifying, and eco-friendly.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+  </div>
+</div>
+
+<!-- Pot Plants Section -->
+<div class="container" id="pot-plants">
+  <h2 class="title">Pot Plants</h2>
+  <div class="shop-content">
+
+    <!-- Bright Color Plants -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Bright-colour-plants720.jpg" class="plant-img" alt="Bright Color Plants">
+      </div>
+      <h2 class="plant-title">Bright Color Plants</h2>
+      <span class="plant-price" style="color: #FF6347; font-weight: bold;">Rs.720</span>
+      <p class="plant-description">Medium-sized plants with vibrant, eye-catching foliage, perfect for brightening indoor or outdoor spaces.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (up to 2 feet) <br>
+        <strong>Color:</strong> Multicolored leaves <br>
+        <strong>Shape:</strong> Compact and bushy <br>
+        <strong>Quality:</strong> Decorative, hardy, and vibrant.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Air-Purifying Indoor Plants -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Air-purifying-Indoor-plants-for-Office-Desk1160.jpg" class="plant-img" alt="Air-Purifying Indoor Plants">
+      </div>
+      <h2 class="plant-title">Air-Purifying Indoor Plants</h2>
+      <span class="plant-price" style="color: #2E8B57; font-weight: bold;">Rs.1160</span>
+      <p class="plant-description">Compact plants designed to improve air quality and add a touch of green to indoor spaces.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium (1-2 feet) <br>
+        <strong>Color:</strong> Lush green leaves <br>
+        <strong>Shape:</strong> Dense and upright <br>
+        <strong>Quality:</strong> Premium, air-purifying, and low maintenance.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Black Foliage Plant -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Black-foliage-Plant933.jpg" class="plant-img" alt="Black Foliage Plant">
+      </div>
+      <h2 class="plant-title">Black Foliage Plant</h2>
+      <span class="plant-price" style="color: #4B0082; font-weight: bold;">Rs.933</span>
+      <p class="plant-description">Unique plants with glossy black leaves, adding elegance to modern interiors or shaded gardens.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (up to 2 feet) <br>
+        <strong>Color:</strong> Glossy black leaves <br>
+        <strong>Shape:</strong> Compact and upright <br>
+        <strong>Quality:</strong> Decorative, premium, and exotic.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Colorful Foliage -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="colourful-Foliage1120.jpg" class="plant-img" alt="Colorful Foliage">
+      </div>
+      <h2 class="plant-title">Colorful Foliage</h2>
+      <span class="plant-price" style="color: #FF4500; font-weight: bold;">Rs.1120</span>
+      <p class="plant-description">Vibrant, multi-colored plants perfect for creating an eye-catching focal point in any garden or room.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Large (up to 3 feet) <br>
+        <strong>Color:</strong> Multicolored leaves (red, yellow, green) <br>
+        <strong>Shape:</strong> Bushy and spreading <br>
+        <strong>Quality:</strong> High-quality, colorful, and striking.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Green-Yellow Shade -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Green-Yellow-Shade-678.jpg" class="plant-img" alt="Green-Yellow Shade">
+      </div>
+      <h2 class="plant-title">Green-Yellow Shade</h2>
+      <span class="plant-price" style="color: #9ACD32; font-weight: bold;">Rs.678</span>
+      <p class="plant-description">Medium-sized plant with striking green and yellow leaves, perfect for bright corners or tabletops.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (1-2 feet) <br>
+        <strong>Color:</strong> Green with yellow variegation <br>
+        <strong>Shape:</strong> Compact and bushy <br>
+        <strong>Quality:</strong> Vibrant, attractive, and durable.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Lovely Foliage -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Lovely-Outdoor-Foliage-1240.jpg" class="plant-img" alt="Lovely Foliage">
+      </div>
+      <h2 class="plant-title">Lovely Foliage</h2>
+      <span class="plant-price" style="color: #32CD32; font-weight: bold;">Rs.1240</span>
+      <p class="plant-description">Large-sized plants with intricately patterned leaves, ideal for outdoor decoration or shaded corners.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Large (3-4 feet) <br>
+        <strong>Color:</strong> Green leaves with unique patterns <br>
+        <strong>Shape:</strong> Bushy and spreading <br>
+        <strong>Quality:</strong> Premium, decorative, and long-lasting.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Natural Air Purifiers -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Natural-Air-purifiers-for-Summer1559.jpg" class="plant-img" alt="Natural Air Purifiers">
+      </div>
+      <h2 class="plant-title">Natural Air Purifiers</h2>
+      <span class="plant-price" style="color: #006400; font-weight: bold;">Rs.1559</span>
+      <p class="plant-description">High-quality plants renowned for their ability to improve indoor air quality naturally.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium to Large (2-3 feet) <br>
+        <strong>Color:</strong> Deep green leaves <br>
+        <strong>Shape:</strong> Upright and dense <br>
+        <strong>Quality:</strong> Air-purifying, robust, and eco-friendly.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Combo of Pink -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Combo-of-pink635.jpg" class="plant-img" alt="Combo of Pink">
+      </div>
+      <h2 class="plant-title">Combo of Pink</h2>
+      <span class="plant-price" style="color: #FF69B4; font-weight: bold;">Rs.635</span>
+      <p class="plant-description">A delightful combination of compact plants featuring pink hues for a charming display.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small (up to 1 foot) <br>
+        <strong>Color:</strong> Shades of pink and green <br>
+        <strong>Shape:</strong> Neat and compact <br>
+        <strong>Quality:</strong> Decorative, vibrant, and space-saving.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+  </div>
+</div>
+
+<!-- Aqua Plants Section -->
+<div class="container" id="aqua-plants">
+  <h2 class="title">Aqua Plants</h2>
+  <div class="shop-content">
+
+    <!-- Water Lily -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="water-lily-nymphae-nouchali-blue314.avif" class="plant-img" alt="Water Lily">
+      </div>
+      <h2 class="plant-title">Water Lily (Nymphaea Nouchali)</h2>
+      <span class="plant-price" style="color: #1E90FF; font-weight: bold;">Rs.40</span>
+      <p class="plant-description">A stunning aquatic plant with vibrant blue flowers, perfect for ponds or aquariums.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium (up to 1 foot) <br>
+        <strong>Color:</strong> Blue flowers, green leaves <br>
+        <strong>Shape:</strong> Floating with round leaves <br>
+        <strong>Quality:</strong> Hardy, decorative, and exotic.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Florida -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="florida.jpg" class="plant-img" alt="Florida">
+      </div>
+      <h2 class="plant-title">Florida</h2>
+      <span class="plant-price" style="color: #228B22; font-weight: bold;">Rs.49</span>
+      <p class="plant-description">A hardy aquatic plant with lush green foliage, ideal for water gardens.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium (1-2 feet) <br>
+        <strong>Color:</strong> Green leaves <br>
+        <strong>Shape:</strong> Dense and upright <br>
+        <strong>Quality:</strong> Durable, vibrant, and easy to maintain.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Lotus Bud -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Nelumbo_nucifera_LOTUS_bud.jpg" class="plant-img" alt="Lotus Bud">
+      </div>
+      <h2 class="plant-title">Lotus Bud (Nelumbo Nucifera)</h2>
+      <span class="plant-price" style="color: #FF1493; font-weight: bold;">Rs.159</span>
+      <p class="plant-description">An elegant aquatic plant with graceful lotus buds, ideal for serene water features.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (up to 2 feet) <br>
+        <strong>Color:</strong> Pink buds, green leaves <br>
+        <strong>Shape:</strong> Floating with rounded pads <br>
+        <strong>Quality:</strong> Premium, decorative, and symbolic.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Nymphaea Alba -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Nymphaea_alba.jpg" class="plant-img" alt="Nymphaea Alba">
+      </div>
+      <h2 class="plant-title">Nymphaea Alba</h2>
+      <span class="plant-price" style="color: hwb(55 8% 16%); font-weight: bold;">Rs.49</span>
+      <p class="plant-description">A charming aquatic plant with pristine white flowers, suitable for ponds or aquariums.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium (up to 1 foot) <br>
+        <strong>Color:</strong> White flowers, green leaves <br>
+        <strong>Shape:</strong> Floating with rounded leaves <br>
+        <strong>Quality:</strong> Decorative, delicate, and elegant.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Alternanthera Reineckii -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Alternanthera reineckil95.jpg" class="plant-img" alt="Alternanthera Reineckii">
+      </div>
+      <h2 class="plant-title">Alternanthera Reineckii</h2>
+      <span class="plant-price" style="color: #8B0000; font-weight: bold;">Rs.275</span>
+      <p class="plant-description">A vibrant aquatic plant with striking red hues, perfect for aquascaping.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small (up to 1 foot) <br>
+        <strong>Color:</strong> Red leaves <br>
+        <strong>Shape:</strong> Upright and compact <br>
+        <strong>Quality:</strong> Hardy, vibrant, and aesthetic.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Bucephalandra Pygmaea -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Bucephalandrra pygmaea900.jpg" class="plant-img" alt="Bucephalandra Pygmaea">
+      </div>
+      <h2 class="plant-title">Bucephalandra Pygmaea</h2>
+      <span class="plant-price" style="color: #006400; font-weight: bold;">Rs.900</span>
+      <p class="plant-description">A compact aquatic plant with lush green foliage, ideal for nano tanks.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small (up to 0.5 foot) <br>
+        <strong>Color:</strong> Deep green leaves <br>
+        <strong>Shape:</strong> Compact and bushy <br>
+        <strong>Quality:</strong> Exotic, durable, and premium.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Cryptocoryne Wendtii -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Cryptcoryne-wendtii275.jpg" class="plant-img" alt="Cryptocoryne Wendtii">
+      </div>
+      <h2 class="plant-title">Cryptocoryne Wendtii</h2>
+      <span class="plant-price" style="color: #2E8B57; font-weight: bold;">Rs.275</span>
+      <p class="plant-description">A hardy aquatic plant with lush green foliage, perfect for aquariums.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium (up to 1 foot) <br>
+        <strong>Color:</strong> Green leaves <br>
+        <strong>Shape:</strong> Compact and spreading <br>
+        <strong>Quality:</strong> Durable, versatile, and attractive.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Echinodorus Cordifolius -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="EchinodorusCordifoliusMable-queen85.jpg" class="plant-img" alt="Echinodorus Cordifolius">
+      </div>
+      <h2 class="plant-title">Echinodorus Cordifolius</h2>
+      <span class="plant-price" style="color: #32CD32; font-weight: bold;">Rs.85</span>
+      <p class="plant-description">A bold aquatic plant with large foliage, suitable for larger aquariums or ponds.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Large (up to 3 feet) <br>
+        <strong>Color:</strong> Bright green leaves <br>
+        <strong>Shape:</strong> Upright and spreading <br>
+        <strong>Quality:</strong> Decorative, hardy, and eco-friendly.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+  </div>
+</div>
+<!-- Croton Plants Section -->
+<div class="container" id="croton-plants">
+  <h2 class="title">Croton Plants</h2>
+  <div class="shop-content">
+
+    <!-- Acalpha Wilkesiana Hoffm -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Acalpha-wilkesiana-hoffm45.jpeg" class="plant-img" alt="Acalpha Wilkesiana Hoffm">
+      </div>
+      <h2 class="plant-title">Acalpha Wilkesiana Hoffm</h2>
+      <span class="plant-price" style="color: #FF4500; font-weight: bold;">Rs.45</span>
+      <p class="plant-description">A vibrant croton plant with broad, multi-colored leaves that bring life to any space.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (up to 3 feet) <br>
+        <strong>Color:</strong> Red, green, and orange hues <br>
+        <strong>Shape:</strong> Bushy with broad leaves <br>
+        <strong>Quality:</strong> Decorative, hardy, and colorful.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Acalpha Wilkesiana Jacobs -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Acalpha-wilkesiana-Jacobs-coat-39.jpeg" class="plant-img" alt="Acalpha Wilkesiana Jacobs">
+      </div>
+      <h2 class="plant-title">Acalpha Wilkesiana Jacobs</h2>
+      <span class="plant-price" style="color: #FF6347; font-weight: bold;">Rs.39</span>
+      <p class="plant-description">Features vibrant, speckled foliage with a mix of green, red, and orange shades.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (up to 3 feet) <br>
+        <strong>Color:</strong> Multicolored with speckled patterns <br>
+        <strong>Shape:</strong> Upright and compact <br>
+        <strong>Quality:</strong> Striking, durable, and low maintenance.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Acalypha Kona Gold Variegated -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Acalypha-kona-gold-variegated39.jpg" class="plant-img" alt="Acalypha Kona Gold Variegated">
+      </div>
+      <h2 class="plant-title">Acalypha Kona Gold Variegated</h2>
+      <span class="plant-price" style="color: #FFD700; font-weight: bold;">Rs.39</span>
+      <p class="plant-description">Golden-hued leaves with a glossy finish, perfect for brightening interiors and gardens.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium (up to 2 feet) <br>
+        <strong>Color:</strong> Bright golden-yellow <br>
+        <strong>Shape:</strong> Elongated and bushy <br>
+        <strong>Quality:</strong> Glossy, vibrant, and elegant.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Cordyline Fruticosa Negra -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Cordyline-fruticosa-Negra39.jpg" class="plant-img" alt="Cordyline Fruticosa Negra">
+      </div>
+      <h2 class="plant-title">Cordyline Fruticosa Negra</h2>
+      <span class="plant-price" style="color: #8B0000; font-weight: bold;">Rs.39</span>
+      <p class="plant-description">Deep burgundy foliage with a sleek, glossy finish, ideal for modern interiors.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (up to 3 feet) <br>
+        <strong>Color:</strong> Rich burgundy <br>
+        <strong>Shape:</strong> Upright and narrow <br>
+        <strong>Quality:</strong> Exotic, stylish, and low maintenance.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Cordyline Terminalis -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Cordyline-terminalis54.jpg" class="plant-img" alt="Cordyline Terminalis">
+      </div>
+      <h2 class="plant-title">Cordyline Terminalis</h2>
+      <span class="plant-price" style="color: #FF69B4; font-weight: bold;">Rs.54</span>
+      <p class="plant-description">Elegant foliage with bold pink and green stripes that create a striking display.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Large (up to 4 feet) <br>
+        <strong>Color:</strong> Green and pink striped leaves <br>
+        <strong>Shape:</strong> Bushy with an upright growth pattern <br>
+        <strong>Quality:</strong> Decorative, vibrant, and versatile.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Euodia Golden Aralia -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Euodia Golden Aralia49.jpg" class="plant-img" alt="Euodia Golden Aralia">
+      </div>
+      <h2 class="plant-title">Euodia Golden Aralia</h2>
+      <span class="plant-price" style="color: #FFD700; font-weight: bold;">Rs.49</span>
+      <p class="plant-description">Delicate, feathery golden foliage adds texture and elegance to any setting.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (up to 2 feet) <br>
+        <strong>Color:</strong> Soft golden-yellow <br>
+        <strong>Shape:</strong> Lacy and spreading <br>
+        <strong>Quality:</strong> Textured, unique, and durable.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Cordyline Fruticosa -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Cordyline-fruticosa45.jpg" class="plant-img" alt="Cordyline Fruticosa">
+      </div>
+      <h2 class="plant-title">Cordyline Fruticosa</h2>
+      <span class="plant-price" style="color: #FF4500; font-weight: bold;">Rs.45</span>
+      <p class="plant-description">Compact plant with vibrant red and green foliage, perfect for indoor displays.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium (1-2 feet) <br>
+        <strong>Color:</strong> Bright red and green <br>
+        <strong>Shape:</strong> Dense and upright <br>
+        <strong>Quality:</strong> Eye-catching, low maintenance, and vibrant.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Ficus Tiger Bark -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="ficus Tiger Bark79.png" class="plant-img" alt="Ficus Tiger Bark">
+      </div>
+      <h2 class="plant-title">Ficus Tiger Bark</h2>
+      <span class="plant-price" style="color: #32CD32; font-weight: bold;">Rs.79</span>
+      <p class="plant-description">Unique plant with patterned bark and lush green leaves, ideal for bonsai enthusiasts.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (up to 3 feet) <br>
+        <strong>Color:</strong> Green leaves with a textured bark <br>
+        <strong>Shape:</strong> Broad and spreading <br>
+        <strong>Quality:</strong> Unique, artistic, and versatile.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+  </div>
+</div>
+
+<!-- Creeper Plants Section --> 
+<div class="container" id="creeper-plants">
+  <h2 class="title">Creeper Plants</h2>
+  <div class="shop-content">
+
+    <!-- Lonicera Japonica -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="lonicera-japonica.jpg" class="plant-img" alt="Lonicera Japonica">
+      </div>
+      <h2 class="plant-title">Lonicera Japonica</h2>
+      <span class="plant-price" style="color: green; font-weight: bold;">Rs.69</span>
+      <p class="plant-description">A graceful creeper with delicate, fragrant blooms in soft yellow and white, perfect for gardens and trellises.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (up to 15 feet) <br>
+        <strong>Color:</strong> Yellow and white flowers <br>
+        <strong>Shape:</strong> Twining stems with clusters of blooms <br>
+        <strong>Quality:</strong> Fragrant, hardy, and fast-growing.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Begonia Venusta -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="begonia venusta_0.jpg" class="plant-img" alt="Begonia Venusta">
+      </div>
+      <h2 class="plant-title">Begonia Venusta</h2>
+      <span class="plant-price" style="color: blue; font-weight: bold;">Rs.99</span>
+      <p class="plant-description">An enchanting creeper with glossy green leaves and charming pink flowers, ideal for hanging baskets or shaded areas.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium (1-2 feet) <br>
+        <strong>Color:</strong> Green leaves, pink flowers <br>
+        <strong>Shape:</strong> Trailing stems with vibrant blooms <br>
+        <strong>Quality:</strong> Decorative, compact, and low-maintenance.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Thunbergia Grandiflora White -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Thunbergia-grandiflora-White69.jpg" class="plant-img" alt="Thunbergia Grandiflora White">
+      </div>
+      <h2 class="plant-title">Thunbergia Grandiflora White</h2>
+      <span class="plant-price" style="color: orange; font-weight: bold;">Rs.69</span>
+      <p class="plant-description">A stunning flowering creeper with large, white trumpet-shaped blooms, ideal for fences or pergolas.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium to Large (up to 20 feet) <br>
+        <strong>Color:</strong> White flowers <br>
+        <strong>Shape:</strong> Vigorous climber with spreading vines <br>
+        <strong>Quality:</strong> Ornamental, fast-growing, and easy to maintain.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Clematis Gourina -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="clematis-gourina.jpg" class="plant-img" alt="Clematis Gourina">
+      </div>
+      <h2 class="plant-title">Clematis Gourina</h2>
+      <span class="plant-price" style="color: purple; font-weight: bold;">Rs.199</span>
+      <p class="plant-description">A graceful climber adorned with star-shaped, soft purple flowers, perfect for trellises or walls.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (up to 10 feet) <br>
+        <strong>Color:</strong> Soft purple flowers <br>
+        <strong>Shape:</strong> Twining stems with delicate blooms <br>
+        <strong>Quality:</strong> Elegant, durable, and visually striking.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Double Petals Rangoon Creeper -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Double-Petals-Rangoon-Creeper300.jpg" class="plant-img" alt="Double Petals Rangoon Creeper">
+      </div>
+      <h2 class="plant-title">Double Petals Rangoon Creeper</h2>
+      <span class="plant-price" style="color: red; font-weight: bold;">Rs.300</span>
+      <p class="plant-description">A striking creeper featuring fragrant, double-petal blooms in shades of pink and red, ideal for arbors or pergolas.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Large (up to 20 feet) <br>
+        <strong>Color:</strong> Pink and red flowers <br>
+        <strong>Shape:</strong> Dense, spreading climber <br>
+        <strong>Quality:</strong> Fragrant, vibrant, and ornamental.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Flaming Glory -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Flaming-glory300.jpg" class="plant-img" alt="Flaming Glory">
+      </div>
+      <h2 class="plant-title">Flaming Glory</h2>
+      <span class="plant-price" style="color: crimson; font-weight: bold;">Rs.300</span>
+      <p class="plant-description">Bright orange-red trumpet-shaped flowers adorn this fast-growing creeper, perfect for adding vibrant color to outdoor spaces.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (up to 15 feet) <br>
+        <strong>Color:</strong> Orange-red flowers <br>
+        <strong>Shape:</strong> Climbing with trailing blooms <br>
+        <strong>Quality:</strong> Vibrant, hardy, and low-maintenance.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Jaquementia Violaca -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="jaquementia violaca_0.jpg" class="plant-img" alt="Jaquementia Violaca">
+      </div>
+      <h2 class="plant-title">Jaquementia Violaca</h2>
+      <span class="plant-price" style="color: darkviolet; font-weight: bold;">Rs.199</span>
+      <p class="plant-description">A delicate climber with lush green foliage and charming violet blooms, perfect for shaded corners or patios.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium (1-2 feet) <br>
+        <strong>Color:</strong> Violet flowers, green foliage <br>
+        <strong>Shape:</strong> Compact, trailing stems <br>
+        <strong>Quality:</strong> Decorative, graceful, and versatile.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Passiflora -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="passiflora.jpg" class="plant-img" alt="Passiflora">
+      </div>
+      <h2 class="plant-title">Passiflora</h2>
+      <span class="plant-price" style="color: teal; font-weight: bold;">Rs.299</span>
+      <p class="plant-description">An exotic climber with intricate purple and white flowers, ideal for adding a touch of tropical elegance to gardens.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium to Large (up to 15 feet) <br>
+        <strong>Color:</strong> Purple and white flowers <br>
+        <strong>Shape:</strong> Twining stems with intricate blooms <br>
+        <strong>Quality:</strong> Exotic, ornamental, and visually stunning.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+  </div>
+</div>
+<!-- Climber Plants Section -->
+<div class="container" id="climber-plants">
+  <h2 class="title">Climber Plants</h2>
+  <div class="shop-content">
+
+    <!-- Anemopema Chamberlaynii -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="AnemoPegma chamberlaynii299.jpg" class="plant-img" alt="Anemopema Chamberlaynii">
+      </div>
+      <h2 class="plant-title">Anemopema Chamberlaynii</h2>
+      <span class="plant-price" style="color: teal; font-weight: bold;">Rs.299</span>
+      <p class="plant-description">A graceful climber with dense green foliage and clusters of delicate white flowers that add elegance to any garden.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium to Large (up to 15 feet) <br>
+        <strong>Color:</strong> Dark green leaves, white flowers <br>
+        <strong>Shape:</strong> Sprawling and dense <br>
+        <strong>Quality:</strong> Hardy, ornamental, and versatile.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Blue Cluster Vine -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Blue-cluster-wineSkyblue Clustvine299.jpg" class="plant-img" alt="Blue Cluster Vine">
+      </div>
+      <h2 class="plant-title">Blue Cluster Vine</h2>
+      <span class="plant-price" style="color: blue; font-weight: bold;">Rs.299</span>
+      <p class="plant-description">This stunning climber showcases soft, sky-blue blooms arranged in dense clusters, ideal for pergolas and fences.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (up to 10 feet) <br>
+        <strong>Color:</strong> Light blue flowers, green leaves <br>
+        <strong>Shape:</strong> Spreading and cascading <br>
+        <strong>Quality:</strong> Decorative, fast-growing, and easy to maintain.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Blue Krishna Kamal -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Blue-Krishna-Kamal1250-Passiflora caerulea the blue Passion flo.jpg" class="plant-img" alt="Blue Krishna Kamal">
+      </div>
+      <h2 class="plant-title">Blue Krishna Kamal</h2>
+      <span class="plant-price" style="color: purple; font-weight: bold;">Rs.1250</span>
+      <p class="plant-description">An exotic climber featuring intricate blue and white flowers that are both eye-catching and fragrant.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Large (up to 20 feet) <br>
+        <strong>Color:</strong> Blue and white flowers, green foliage <br>
+        <strong>Shape:</strong> Twining and expansive <br>
+        <strong>Quality:</strong> Exotic, ornamental, and fragrant.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Bridal Bouquet -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="BridalBouquet299White-Clematis3_plant.jpg" class="plant-img" alt="Bridal Bouquet">
+      </div>
+      <h2 class="plant-title">Bridal Bouquet</h2>
+      <span class="plant-price" style="color: pink; font-weight: bold;">Rs.299</span>
+      <p class="plant-description">Elegant white Clematis flowers give this climber a soft and romantic aesthetic, perfect for trellises and arches.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium to Large (up to 12 feet) <br>
+        <strong>Color:</strong> White flowers, green foliage <br>
+        <strong>Shape:</strong> Spreading and cascading <br>
+        <strong>Quality:</strong> Graceful, ornamental, and charming.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Cat's Claw Creeper -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Cats-Claw-Creeper199.jpg" class="plant-img" alt="Cat's Claw Creeper">
+      </div>
+      <h2 class="plant-title">Cat's Claw Creeper</h2>
+      <span class="plant-price" style="color: orange; font-weight: bold;">Rs.199</span>
+      <p class="plant-description">Known for its vibrant yellow, claw-shaped flowers, this fast-growing climber is perfect for covering walls and fences.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Large (up to 30 feet) <br>
+        <strong>Color:</strong> Bright yellow flowers, green foliage <br>
+        <strong>Shape:</strong> Dense and climbing <br>
+        <strong>Quality:</strong> Hardy, vibrant, and fast-spreading.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Climbing Rose -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Climbing-Rose199.jpg" class="plant-img" alt="Climbing Rose">
+      </div>
+      <h2 class="plant-title">Climbing Rose</h2>
+      <span class="plant-price" style="color: crimson; font-weight: bold;">Rs.199</span>
+      <p class="plant-description">This enchanting climber produces fragrant roses in rich, vivid colors, perfect for adding romance to your garden.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium to Large (up to 12 feet) <br>
+        <strong>Color:</strong> Red, pink, or white flowers <br>
+        <strong>Shape:</strong> Twining and bushy <br>
+        <strong>Quality:</strong> Fragrant, decorative, and romantic.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Ranjai Clematis -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Ranjai-plant-clematis299.jpg" class="plant-img" alt="Ranjai Clematis">
+      </div>
+      <h2 class="plant-title">Ranjai Clematis</h2>
+      <span class="plant-price" style="color: magenta; font-weight: bold;">Rs.299</span>
+      <p class="plant-description">A stunning climber showcasing star-shaped pink and purple flowers, ideal for pergolas and balconies.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (up to 10 feet) <br>
+        <strong>Color:</strong> Pink and purple flowers, green leaves <br>
+        <strong>Shape:</strong> Spreading and elegant <br>
+        <strong>Quality:</strong> Colorful, ornamental, and vibrant.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Congea -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Congea299.jpg" class="plant-img" alt="Congea">
+      </div>
+      <h2 class="plant-title">Congea</h2>
+      <span class="plant-price" style="color: limegreen; font-weight: bold;">Rs.299</span>
+      <p class="plant-description">This unique climber features pale pink bracts resembling delicate paper flowers, creating a striking visual effect.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (up to 15 feet) <br>
+        <strong>Color:</strong> Pale pink bracts, green foliage <br>
+        <strong>Shape:</strong> Cascading and soft <br>
+        <strong>Quality:</strong> Unique, ornamental, and eye-catching.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+  </div>
+</div>
+
+<!-- Vegetable Plants Section -->
+<div class="container" id="vegetable-plants">
+  <h2 class="title">Vegetable Plants</h2>
+  <div class="shop-content">
+    
+    <!-- Brinjal -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Brinjal-Plant-Nattu-Kaththiri20.jpg" class="plant-img" alt="Brinjal Plant">
+      </div>
+      <h2 class="plant-title">Brinjal Plant</h2>
+      <span class="plant-price" style="color: green; font-weight: bold;">Rs.20</span>
+      <p class="plant-description">A hardy plant that produces glossy, purple brinjal fruits ideal for home gardens.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (2-3 feet) <br>
+        <strong>Color:</strong> Deep purple fruits with green leaves <br>
+        <strong>Shape:</strong> Bushy with upright stems <br>
+        <strong>Quality:</strong> High-yielding, drought-tolerant, and easy to grow.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Cabbage -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Cabbage49.jpg" class="plant-img" alt="Cabbage Plant">
+      </div>
+      <h2 class="plant-title">Cabbage Plant</h2>
+      <span class="plant-price" style="color: green; font-weight: bold;">Rs.49</span>
+      <p class="plant-description">A reliable vegetable plant that produces firm, round heads of green leaves perfect for fresh salads.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (1-2 feet) <br>
+        <strong>Color:</strong> Light to dark green leaves <br>
+        <strong>Shape:</strong> Compact, round heads <br>
+        <strong>Quality:</strong> Pest-resistant, high-yielding, and nutrient-rich.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Cauliflower -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="cauliflower-plant39.jpg" class="plant-img" alt="Cauliflower Plant">
+      </div>
+      <h2 class="plant-title">Cauliflower Plant</h2>
+      <span class="plant-price" style="color: green; font-weight: bold;">Rs.39</span>
+      <p class="plant-description">A premium plant that yields crisp, white cauliflower heads ideal for culinary uses.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (1-2 feet) <br>
+        <strong>Color:</strong> White florets with green leaves <br>
+        <strong>Shape:</strong> Compact and dense heads <br>
+        <strong>Quality:</strong> High-quality, flavorful, and nutrient-dense.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Tendersweet Carrot -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="tendersweet-carrot355.jpeg" class="plant-img" alt="Tendersweet Carrot Plant">
+      </div>
+      <h2 class="plant-title">Tendersweet Carrot Plant</h2>
+      <span class="plant-price" style="color: red; font-weight: bold;">Rs.355</span>
+      <p class="plant-description">A vibrant plant that produces bright orange, tender, and sweet carrots perfect for snacking or cooking.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium (up to 1 foot) <br>
+        <strong>Color:</strong> Bright orange roots <br>
+        <strong>Shape:</strong> Slender and straight <br>
+        <strong>Quality:</strong> Sweet, tender, and highly nutritious.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Long Chilli -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Long-Chilli1.jpg" class="plant-img" alt="Long Chilli Plant">
+      </div>
+      <h2 class="plant-title">Long Chilli Plant</h2>
+      <span class="plant-price" style="color: orange; font-weight: bold;">Rs.199</span>
+      <p class="plant-description">A fiery plant producing slender, vibrant red chilies for spice enthusiasts.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (up to 2 feet) <br>
+        <strong>Color:</strong> Bright red fruits <br>
+        <strong>Shape:</strong> Slender and elongated <br>
+        <strong>Quality:</strong> High-yielding, spicy, and aromatic.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Perfecto Radish -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="perfecto-radish-plant_399.jpeg" class="plant-img" alt="Perfecto Radish Plant">
+      </div>
+      <h2 class="plant-title">Perfecto Radish Plant</h2>
+      <span class="plant-price" style="color: red; font-weight: bold;">Rs.399</span>
+      <p class="plant-description">This plant yields crisp, white radishes with a refreshing, mild flavor.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small (up to 1 foot) <br>
+        <strong>Color:</strong> White roots with green tops <br>
+        <strong>Shape:</strong> Smooth and cylindrical <br>
+        <strong>Quality:</strong> Juicy, crisp, and flavorful.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Buttercrunch Lettuce -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Buttercrunch-lettuce455.jpeg" class="plant-img" alt="Buttercrunch Lettuce Plant">
+      </div>
+      <h2 class="plant-title">Buttercrunch Lettuce Plant</h2>
+      <span class="plant-price" style="color: red; font-weight: bold;">Rs.455</span>
+      <p class="plant-description">This plant produces tender, buttery-textured leaves perfect for salads.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small (up to 1 foot) <br>
+        <strong>Color:</strong> Light green leaves <br>
+        <strong>Shape:</strong> Rosette-shaped, loose heads <br>
+        <strong>Quality:</strong> Tender, mild-flavored, and fresh.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Detroit Dark Red Beetroot -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="detroit-dark-red-beet-plant455.jpeg" class="plant-img" alt="Detroit Dark Red Beetroot Plant">
+      </div>
+      <h2 class="plant-title">Detroit Dark Red Beetroot Plant</h2>
+      <span class="plant-price" style="color: green; font-weight: bold;">Rs.45</span>
+      <p class="plant-description">A productive plant yielding deep red, sweet, and tender beets ideal for cooking or salads.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small (up to 1 foot) <br>
+        <strong>Color:</strong> Deep red roots with green tops <br>
+        <strong>Shape:</strong> Round and smooth <br>
+        <strong>Quality:</strong> Sweet, tender, and vibrant.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+  </div>
+</div>
+
+<!-- Indoor Plants Section -->
+<div class="container" id="indoor-plants">
+  <h2 class="title">Indoor Plants</h2>
+  <div class="shop-content">
+
+    <!-- Aglaonema Snow White -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Aglaonema Snow White99.png" class="plant-img" alt="Aglaonema Snow White">
+      </div>
+      <h2 class="plant-title">Aglaonema Snow White</h2>
+      <span class="plant-price" style="color: orange; font-weight: bold;">Rs.99</span>
+      <p class="plant-description">An elegant indoor plant with vibrant green and white foliage.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium (1-2 feet) <br>
+        <strong>Color:</strong> Green with white variegation <br>
+        <strong>Shape:</strong> Compact and upright <br>
+        <strong>Quality:</strong> Low-maintenance, decorative, and air-purifying.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Aglaonema Udom Sab -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Aglaonema Udom Sab100.jpeg" class="plant-img" alt="Aglaonema Udom Sab">
+      </div>
+      <h2 class="plant-title">Aglaonema Udom Sab</h2>
+      <span class="plant-price" style="color: orange; font-weight: bold;">Rs.100</span>
+      <p class="plant-description">Graceful plant with deep green, patterned leaves.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium (1-2 feet) <br>
+        <strong>Color:</strong> Dark green with intricate patterns <br>
+        <strong>Shape:</strong> Dense and upright <br>
+        <strong>Quality:</strong> Hardy, vibrant, and air-enhancing.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Money Plant -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="money-plant-variegated49.jpg" class="plant-img" alt="Money Plant">
+      </div>
+      <h2 class="plant-title">Money Plant</h2>
+      <span class="plant-price" style="color: green; font-weight: bold;">Rs.59</span>
+      <p class="plant-description">A popular indoor plant with glossy, heart-shaped leaves.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (up to 2 feet) <br>
+        <strong>Color:</strong> Lush green or variegated <br>
+        <strong>Shape:</strong> Trailing vines or bushy growth <br>
+        <strong>Quality:</strong> Durable, ornamental, and easy to grow.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Areca Palm -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="ArecaPalm699.avif" class="plant-img" alt="Areca Palm">
+      </div>
+      <h2 class="plant-title">Areca Palm</h2>
+      <span class="plant-price" style="color: red; font-weight: bold;">Rs.699</span>
+      <p class="plant-description">This tall indoor plant with lush, feathery fronds adds a tropical vibe.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Large (4-6 feet) <br>
+        <strong>Color:</strong> Bright green leaves <br>
+        <strong>Shape:</strong> Tall with spreading fronds <br>
+        <strong>Quality:</strong> Air-purifying, tropical, and stylish.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Caladium Dragon Heart -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Caladium-Dragon-Heart59.jpg" class="plant-img" alt="Caladium Dragon Heart">
+      </div>
+      <h2 class="plant-title">Caladium Dragon Heart</h2>
+      <span class="plant-price" style="color: green; font-weight: bold;">Rs.59</span>
+      <p class="plant-description">Unique foliage with striking red and green patterns.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium (1-2 feet) <br>
+        <strong>Color:</strong> Red and green patterned leaves <br>
+        <strong>Shape:</strong> Bushy and vibrant <br>
+        <strong>Quality:</strong> Eye-catching, decorative, and hardy.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Caladium Pink Dots -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Caladium-Pink-Dots59.jpg" class="plant-img" alt="Caladium Pink Dots">
+      </div>
+      <h2 class="plant-title">Caladium Pink Dots</h2>
+      <span class="plant-price" style="color: green; font-weight: bold;">Rs.59</span>
+      <p class="plant-description">A charming plant with pink-speckled green leaves.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium (1-2 feet) <br>
+        <strong>Color:</strong> Green leaves with pink spots <br>
+        <strong>Shape:</strong> Compact and bushy <br>
+        <strong>Quality:</strong> Vibrant, ornamental, and resilient.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Golden Bottle Brush -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="GoldenBottleBrush490.webp" class="plant-img" alt="Golden Bottle Brush">
+      </div>
+      <h2 class="plant-title">Golden Bottle Brush</h2>
+      <span class="plant-price" style="color: red; font-weight: bold;">Rs.490</span>
+      <p class="plant-description">A stunning plant with bright yellow-green leaves.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium to Large (2-3 feet) <br>
+        <strong>Color:</strong> Yellow-green foliage <br>
+        <strong>Shape:</strong> Bushy and upright <br>
+        <strong>Quality:</strong> Bright, vibrant, and unique.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Coleus Vivid Lime Green -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Coleus-Vivid-lime-green39.jpg" class="plant-img" alt="Coleus Vivid Lime Green">
+      </div>
+      <h2 class="plant-title">Coleus Vivid Lime Green</h2>
+      <span class="plant-price" style="color: green; font-weight: bold;">Rs.39</span>
+      <p class="plant-description">Compact plant with striking lime green leaves.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small (up to 1 foot) <br>
+        <strong>Color:</strong> Lime green foliage <br>
+        <strong>Shape:</strong> Neat and bushy <br>
+        <strong>Quality:</strong> Compact, colorful, and hardy.
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+  </div>
+</div>
+<!-- Herbal Plants Section -->
+<div class="container" id="herbal-plants">
+  <h2 class="title">Herbal Plants</h2>
+  <div class="shop-content">
+
+    <!-- Alovera -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="alovera150.jpg" class="plant-img">
+      </div>
+      <h2 class="plant-title">Alovera</h2>
+      <span class="plant-price" style="color: green; font-weight: bold;">Rs.150</span>
+      <p class="plant-description">
+        Aloe Vera is a succulent plant known for its medicinal properties. 
+      </p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (Approx. 1-2 feet) <br>
+        <strong>Color:</strong> Green <br>
+        <strong>Shape:</strong> Upright, rosette-like <br>
+        <strong>Quality:</strong> Organic and fresh
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Nithyakalyani -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="nithyakalyani150.jpg" class="plant-img"></div>
+      <h2 class="plant-title">Nithyakalyani</h2>
+      <span class="plant-price" style="color: green; font-weight: bold;">Rs.150</span>
+      <p class="plant-description">
+        Nithyakalyani is a traditional medicinal plant often used in herbal remedies for its detoxifying properties. 
+      </p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium <br>
+        <strong>Color:</strong> Green leaves, vibrant flowers (yellow/pink) <br>
+        <strong>Shape:</strong> Bushy, spreading <br>
+        <strong>Quality:</strong> 100% natural
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Avuri -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="avuri250.jpg" class="plant-img"></div>
+      <h2 class="plant-title">Avuri</h2>
+      <span class="plant-price" style="color: orange; font-weight: bold;">Rs.250</span>
+      <p class="plant-description">
+        Avuri is a versatile herbal plant known for its healing properties, particularly in digestive health. 
+      </p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium to Large (Up to 3 feet) <br>
+        <strong>Color:</strong> Dark Green <br>
+        <strong>Shape:</strong> Bushy, spreading <br>
+        <strong>Quality:</strong> Fresh and healthy
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Curry -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="Curry200.jpeg" class="plant-img"></div>
+      <h2 class="plant-title">Curry</h2>
+      <span class="plant-price" style="color: orange; font-weight: bold;">Rs.200</span>
+      <p class="plant-description">
+        Known for its aromatic leaves, Curry plant is used for culinary and medicinal purposes. 
+      </p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small (Approx. 1 foot) <br>
+        <strong>Color:</strong> Green leaves with a slightly greyish hue <br>
+        <strong>Shape:</strong> Bushy, compact <br>
+        <strong>Quality:</strong> Organically grown
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- KarpooraTulsi -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="karpooraTulsi170.jpg" class="plant-img"></div>
+      <h2 class="plant-title">KarpooraTulsi</h2>
+      <span class="plant-price" style="color: orange; font-weight: bold;">Rs.170</span>
+      <p class="plant-description">
+        Karpoora Tulsi, also known as camphor basil, is revered in Ayurvedic medicine.
+      </p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (Up to 2 feet) <br>
+        <strong>Color:</strong> Green leaves with purple tips <br>
+        <strong>Shape:</strong> Upright, bushy <br>
+        <strong>Quality:</strong> Fresh and aromatic
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Kuppaimeni -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="kuppaimeni150.jpeg" class="plant-img"></div>
+      <h2 class="plant-title">Kuppaimeni</h2>
+      <span class="plant-price" style="color: green; font-weight: bold;">Rs.150</span>
+      <p class="plant-description">
+        Kuppaimeni is an herb with powerful medicinal qualities, known to relieve pain and inflammation. 
+      </p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium <br>
+        <strong>Color:</strong> Dark Green <br>
+        <strong>Shape:</strong> Compact and bushy <br>
+        <strong>Quality:</strong> Organic and fresh
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Manjalkarisalankanni -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="manjalkarisalankanni300.jpg" class="plant-img"></div>
+      <h2 class="plant-title">Manjalkarisalankanni</h2>
+      <span class="plant-price" style="color: red; font-weight: bold;">Rs.300</span>
+      <p class="plant-description">
+        Known for its stunning yellow flowers and vibrant green foliage, Manjalkarisalankanni is often used in traditional medicine. 
+      </p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (Approx. 2 feet) <br>
+        <strong>Color:</strong> Green leaves with bright yellow flowers <br>
+        <strong>Shape:</strong> Bushy and upright <br>
+        <strong>Quality:</strong> Natural and high-quality
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- MudakathanBalloonVine -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="mudakathanBalloonVine150.jpg" class="plant-img"></div>
+      <h2 class="plant-title">MudakathanBalloonVine</h2>
+      <span class="plant-price" style="color: green; font-weight: bold;">Rs.150</span>
+      <p class="plant-description">
+        This herb is known for its spherical balloon-like seeds and is used in traditional remedies. 
+      </p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (Up to 2 feet) <br>
+        <strong>Color:</strong> Green with white flowers <br>
+        <strong>Shape:</strong> Trailing, vine-like <br>
+        <strong>Quality:</strong> Fresh and natural
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+  </div>
+</div>
+<!-- Combo Plants Section -->
+<div class="container" id="combo-plants">
+  <h2 class="title">Combo Plants</h2>
+  <div class="shop-content">
+
+    <!-- ABC Combo Plants -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="ABC-Combo2-455.jpg" class="plant-img">
+      </div>
+      <h2 class="plant-title">ABC Combo Plants</h2>
+      <span class="plant-price" style="color: #FF6347; font-weight: bold;">Rs.455</span>
+      <p class="plant-description">
+        The ABC Combo includes a variety of plants that complement each other in a garden setting.
+      </p>
+      <p class="plant-details">
+        <strong>Size:</strong> Varies <br>
+        <strong>Color:</strong> Multi-colored foliage <br>
+        <strong>Shape:</strong> Varied (from bushy to upright) <br>
+        <strong>Quality:</strong> Carefully curated selection
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Flower Plants Combo -->
+    <div class="plant-box">
+      <div class="pic"><img src="Flower-plant-combo500.jpg" class="plant-img"></div>
+      <h2 class="plant-title">Flower Plants Combo</h2>
+      <span class="plant-price" style="color: #FF1493; font-weight: bold;">Rs.500</span>
+      <p class="plant-description">
+        This combo features a selection of vibrant flowering plants, ideal for adding color and fragrance to any space.
+      </p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium <br>
+        <strong>Color:</strong> Assorted flowers (Red, Pink, Yellow) <br>
+        <strong>Shape:</strong> Bushy and compact <br>
+        <strong>Quality:</strong> High-quality, healthy plants
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Pack of Natural Purifiers -->
+    <div class="plant-box">
+      <div class="pic"><img src="Pack-of-Natural-Purifiers453.jpg" class="plant-img"></div>
+      <h2 class="plant-title">Pack of Natural Purifiers</h2>
+      <span class="plant-price" style="color: #FFA500; font-weight: bold;">Rs.453</span>
+      <p class="plant-description">
+        A combo of air-purifying plants that will help cleanse and refresh your indoor environment.
+      </p>
+      <p class="plant-details">
+        <strong>Size:</strong> Varies <br>
+        <strong>Color:</strong> Green <br>
+        <strong>Shape:</strong> Upright and compact <br>
+        <strong>Quality:</strong> Fresh and air-purifying
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Combo Pack of Perfume Flowers -->
+    <div class="plant-box">
+      <div class="pic"><img src="Perfume-Flower297.jpg" class="plant-img"></div>
+      <h2 class="plant-title">Combo Pack of Perfume Flowers</h2>
+      <span class="plant-price" style="color: #32CD32; font-weight: bold;">Rs.297</span>
+      <p class="plant-description">
+        This combo pack includes fragrant flowers that will bring a pleasant aroma to your garden or balcony.
+      </p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium <br>
+        <strong>Color:</strong> Various (Lavender, Yellow, White) <br>
+        <strong>Shape:</strong> Bushy, spreading <br>
+        <strong>Quality:</strong> Fresh and aromatic
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Monsoon Plants Combo -->
+    <div class="plant-box">
+      <div class="pic"><img src="Monsoon-plant275.jpg" class="plant-img"></div>
+      <h2 class="plant-title">Monsoon Plants Combo</h2>
+      <span class="plant-price" style="color: #228B22; font-weight: bold;">Rs.275</span>
+      <p class="plant-description">
+        A combination of plants that thrive during the monsoon season.
+      </p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium <br>
+        <strong>Color:</strong> Green and multi-colored flowers <br>
+        <strong>Shape:</strong> Upright and spreading <br>
+        <strong>Quality:</strong> Fresh, monsoon-friendly
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Plants for Shaded Balcony -->
+    <div class="plant-box">
+      <div class="pic"><img src="Plants-for-Shaded-Balcony401.jpg" class="plant-img"></div>
+      <h2 class="plant-title">Plants for Shaded Balcony</h2>
+      <span class="plant-price" style="color: #FFD700; font-weight: bold;">Rs.401</span>
+      <p class="plant-description">
+        A carefully selected combo of plants that thrive in shaded balcony areas, adding greenery and charm to even the dimmest spaces.
+      </p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium <br>
+        <strong>Color:</strong> Green <br>
+        <strong>Shape:</strong> Compact and upright <br>
+        <strong>Quality:</strong> Ideal for shaded environments
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Perfect Tree Plants for Home Office -->
+    <div class="plant-box">
+      <div class="pic"><img src="Perfect-Tree-plants-for-home-off358.jpg" class="plant-img"></div>
+      <h2 class="plant-title">Perfect Tree plants for home office</h2>
+      <span class="plant-price" style="color: #FFA500; font-weight: bold;">Rs.358</span>
+      <p class="plant-description">
+        They are low-maintenance, air-purifying, and visually appealing.
+      </p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium to Large <br>
+        <strong>Color:</strong> Green <br>
+        <strong>Shape:</strong> Upright tree-like <br>
+        <strong>Quality:</strong> Fresh and easy to care for
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <!-- Pink White Flowers Combo -->
+    <div class="plant-box">
+      <div class="pic"><img src="Pink-White-flowers400.jpg" class="plant-img"></div>
+      <h2 class="plant-title">Pink White flowers Combo</h2>
+      <span class="plant-price" style="color: #FF69B4; font-weight: bold;">Rs.400</span>
+      <p class="plant-description">
+        A beautiful mix of pink and white flowers, perfect for enhancing any garden with color and fragrance.
+      </p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium <br>
+        <strong>Color:</strong> Pink and White flowers <br>
+        <strong>Shape:</strong> Bushy and spreading <br>
+        <strong>Quality:</strong> Fresh and vibrant
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+  </div>
+</div>
+<!-- Fruit Plants Section -->
+<div class="container" id="fruit-plants">
+  <h2 class="title">Fruit Plants</h2>
+  <div class="shop-content">
+    <!-- Fruit plant items go here -->
+    <div class="plant-box">
+      <div class="pic">
+        <img src="jack-fruit-.webp" class="plant-img">
+      </div>
+      <h2 class="plant-title">Jack Fruit</h2>
+      <span class="plant-price" style="color: #FFBF00; font-weight: bold;">Rs.40</span>
+      <p class="plant-description">The Jack Fruit is a tropical fruit known for its large size and sweet, fibrous fruit.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Large (up to 3 feet) <br>
+        <strong>Color:</strong> Green when unripe, Yellow when ripe <br>
+        <strong>Shape:</strong> Large, oval-shaped fruit with a rough skin <br>
+        <strong>Quality:</strong> Fresh, organic
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <div class="plant-box">
+      <div class="pic"><img src="Khirni-Fruit45.webp" class="plant-img"></div>
+      <h2 class="plant-title">Khirni Fruit</h2>
+      <span class="plant-price" style="color: #8B4513; font-weight: bold;">Rs.45</span>
+      <p class="plant-description">Khirni is a rare, small fruit native to India.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small to Medium (approx. 1-2 feet) <br>
+        <strong>Color:</strong> Yellowish-brown when ripe <br>
+        <strong>Shape:</strong> Small round fruit <br>
+        <strong>Quality:</strong> Naturally grown, fresh
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <div class="plant-box">
+      <div class="pic"><img src="Arka-Kiran-Guava65.jpg" class="plant-img"></div>
+      <h2 class="plant-title">Guava</h2>
+      <span class="plant-price" style="color: #32CD32; font-weight: bold;">Rs.65</span>
+      <p class="plant-description">Guava is a tropical fruit known for its sweet and slightly tangy taste.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (2-3 feet) <br>
+        <strong>Color:</strong> Green skin with white or pink flesh <br>
+        <strong>Shape:</strong> Round to oval-shaped <br>
+        <strong>Quality:</strong> Fresh, organic, vitamin-rich
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <div class="plant-box">
+      <div class="pic"><img src="orange-fruit-santra-.jpg" class="plant-img"></div>
+      <h2 class="plant-title">Orange Fruit</h2>
+      <span class="plant-price" style="color: #FFA500; font-weight: bold;">Rs.40</span>
+      <p class="plant-description">The Orange is a popular citrus fruit known for its tangy-sweet flavor.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (Approx. 2 feet) <br>
+        <strong>Color:</strong> Bright orange skin <br>
+        <strong>Shape:</strong> Round, segmented fruit <br>
+        <strong>Quality:</strong> Fresh, juicy, healthy
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <div class="plant-box">
+      <div class="pic"><img src="lemon-300x300.jpg" class="plant-img"></div>
+      <h2 class="plant-title">Lemon</h2>
+      <span class="plant-price" style="color: #FFFF00; font-weight: bold;">Rs.45</span>
+      <p class="plant-description">Lemons are citrus fruits with a tangy, zesty flavor.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small (Approx. 1 foot) <br>
+        <strong>Color:</strong> Bright yellow when ripe <br>
+        <strong>Shape:</strong> Oval, with smooth skin <br>
+        <strong>Quality:</strong> Fresh, aromatic
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <div class="plant-box">
+      <div class="pic"><img src="chikoo-sapota-.webp" class="plant-img"></div>
+      <h2 class="plant-title">Sapota (Chikoo)</h2>
+      <span class="plant-price" style="color: #A0522D; font-weight: bold;">Rs.35</span>
+      <p class="plant-description">Sapota, also known as Chikoo, is a sweet, grainy-textured fruit with a delicious flavor. It’s rich in vitamins and is a favorite in tropical regions.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (Approx. 2-3 feet) <br>
+        <strong>Color:</strong> Brown skin with soft, light brown flesh <br>
+        <strong>Shape:</strong> Oval, with a rough, brown exterior <br>
+        <strong>Quality:</strong> Fresh, organic
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <div class="plant-box">
+      <div class="pic"><img src="2-Barbados-cherry49.jpg" class="plant-img"></div>
+      <h2 class="plant-title">Barbados Cherry</h2>
+      <span class="plant-price" style="color: #DC143C; font-weight: bold;">Rs.49</span>
+      <p class="plant-description">The Barbados Cherry is a small, tangy fruit that grows in tropical regions.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Small (Approx. 1-2 feet) <br>
+        <strong>Color:</strong> Red when ripe <br>
+        <strong>Shape:</strong> Round, small fruit <br>
+        <strong>Quality:</strong> Fresh, vitamin-rich
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+    <div class="plant-box">
+      <div class="pic"><img src="-black-grape-angoor-seedless.webp" class="plant-img"></div>
+      <h2 class="plant-title">Black Grape</h2>
+      <span class="plant-price" style="color: #4B0082; font-weight: bold;">Rs.59</span>
+      <p class="plant-description">Black Grapes are sweet, juicy fruits that are commonly eaten fresh, juiced, or dried into raisins.</p>
+      <p class="plant-details">
+        <strong>Size:</strong> Medium (Approx. 3 feet) <br>
+        <strong>Color:</strong> Dark purple to black <br>
+        <strong>Shape:</strong> Oval, cluster of grapes <br>
+        <strong>Quality:</strong> Fresh, antioxidant-rich
+      </p>
+      <ion-icon name="cart" class="add-cart"></ion-icon>
+    </div>
+
+  </div>
+</div>
+
+
+
+ 
+    <!-- Bootstrap JS and dependencies -->
+    <script src="JS/script.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  
+    
+</body>
+</html>    
